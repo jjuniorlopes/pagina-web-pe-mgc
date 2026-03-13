@@ -346,6 +346,8 @@ const indicadoresData = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeModals();
+    initializeSearch(); // NOVA FUNÇÃO
+    initializeShare();  // NOVA FUNÇÃO
 });
 
 function initializeNavigation() {
@@ -629,5 +631,62 @@ function initializeModals() {
     
     document.addEventListener('keydown', (e) => { 
         if (e.key === 'Escape') closeModal(); 
+    });
+}
+
+// ==========================================
+// LÓGICA DE COMPARTILHAMENTO SOCIAL
+// ==========================================
+function initializeShare() {
+    const shareButtons = document.querySelectorAll('.share-btn');
+    
+    shareButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const platform = this.getAttribute('data-share');
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title || "Planejamento Estratégico Consórcios");
+
+            if (platform === 'facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+            if (platform === 'x') window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+            if (platform === 'whatsapp') window.open(`https://api.whatsapp.com/send?text=${title}%20-%20${url}`, '_blank');
+            if (platform === 'linkedin') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+            if (platform === 'email') window.open(`mailto:?subject=${title}&body=Confira este link:%20${url}`);
+            if (platform === 'print') window.print();
+            if (platform === 'copy') {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    // Feedback visual temporário no botão
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                    setTimeout(() => { this.innerHTML = originalHTML; }, 2000);
+                });
+            }
+        });
+    });
+}
+
+// ==========================================
+// LÓGICA DA BARRA DE PESQUISA (Filtro na Tela)
+// ==========================================
+function initializeSearch() {
+    const searchInput = document.getElementById('searchInput');
+    
+    // Elementos que podem ser pesquisados/filtrados na tela
+    const searchableCards = document.querySelectorAll('.cv-modern-card, .mvv-modern-card, .pilar');
+
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        searchableCards.forEach(card => {
+            // Pega o texto de dentro do card
+            const text = card.textContent.toLowerCase();
+            
+            // Se o texto inclui o termo buscado, mostra o card, senão oculta.
+            if (text.includes(searchTerm)) {
+                // Remove o display: none e deixa o layout do CSS (grid/flex) agir naturalmente
+                card.style.display = ''; 
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
 }
