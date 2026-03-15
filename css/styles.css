@@ -46,22 +46,31 @@ header.main-banner { padding: 0; overflow: hidden; margin-bottom: 30px; display:
 .navigation ul { list-style: none; display: flex; gap: 25px; flex-wrap: wrap; }
 
 /* ESTILO DO MENU INSTITUCIONAL */
-.nav-link { text-decoration: none; color: #0A2540; font-weight: 700; position: relative; padding: 5px 0; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; }
+.nav-link { 
+    text-decoration: none; 
+    color: var(--primary-color); /* AZUL PADRONIZADO DOS CARDS */
+    font-weight: 800; /* NEGRITO FORTE */
+    position: relative; 
+    padding: 5px 0; 
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+    letter-spacing: 0.5px; 
+}
 .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: -3px; left: 0; background: var(--primary-color); transition: width 0.3s ease; }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-.nav-link:hover { color: var(--primary-color); }
+.nav-link:hover { color: var(--primary-color); filter: brightness(1.2); }
 
 /* Sections */
 .section { padding: 40px; margin-bottom: 30px; transition: transform 0.3s ease; }
 p { font-size: 1.1rem; margin-bottom: 15px; text-align: center; }
 
 /* ==========================================
-   TÍTULOS DAS SEÇÕES E DOS MODAIS (PADRÃO GOVERNO)
+   TÍTULOS DAS SEÇÕES E DOS MODAIS (PADRONIZADO)
 ========================================== */
 h2, .title-alinhamento, .modal-title-custom { 
     font-family: 'Montserrat', sans-serif !important;
-    color: #0A2540 !important; 
-    font-weight: 800 !important; 
+    color: var(--primary-color) !important; /* AZUL PADRONIZADO DOS CARDS */
+    font-weight: 800 !important; /* NEGRITO FORTE */
     text-transform: uppercase !important; 
     text-align: center !important; 
     display: inline-block; 
@@ -187,11 +196,49 @@ footer { text-align: center; padding: 30px; outline: none; }
 .pagination-btn:disabled { background-color: #cccccc; color: #666666; cursor: not-allowed; box-shadow: none; transform: none; }
 .page-info { font-weight: 600; font-size: 1rem; color: var(--text-color); background: #f0f4f8; padding: 8px 16px; border-radius: 8px; }
 
-.btn-voltar-moderno { background: none; border: none; display: flex; align-items: center; gap: 12px; cursor: pointer; margin-bottom: 25px; padding: 0; transition: opacity 0.3s ease; }
-.btn-voltar-moderno:hover, .btn-voltar-moderno:focus { opacity: 0.85; outline: none; }
-.icon-circle-voltar { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background-color: #2b82d9; color: #ffffff; border-radius: 50%; box-shadow: 0 4px 8px rgba(43, 130, 217, 0.3); transition: transform 0.3s ease; }
-.btn-voltar-moderno:hover .icon-circle-voltar { transform: translateX(-4px); }
-.texto-voltar { color: #2b82d9; font-weight: 700; font-size: 1.05rem; font-family: 'Montserrat', sans-serif; }
+/* ==========================================
+   BOTÃO DE VOLTAR MODERNO (Circular)
+========================================== */
+.btn-voltar-moderno { 
+    background: none; 
+    border: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    cursor: pointer; 
+    margin-bottom: 25px; 
+    padding: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.btn-voltar-moderno:hover, .btn-voltar-moderno:focus { 
+    opacity: 0.85; 
+    outline: none; 
+}
+
+.icon-circle-voltar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 36px; 
+    height: 36px; 
+    background-color: var(--primary-color); /* AZUL PADRONIZADO DO PROJETO */
+    color: #ffffff; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(27, 98, 184, 0.3); /* Sombra ajustada para o azul principal */
+    transition: transform 0.3s ease; 
+}
+
+.btn-voltar-moderno:hover .icon-circle-voltar { 
+    transform: translateX(-4px); 
+}
+
+.texto-voltar { 
+    color: var(--primary-color); /* AZUL PADRONIZADO DO PROJETO */
+    font-weight: 800; /* NEGRITO PADRÃO */
+    font-size: 1.1rem; 
+    font-family: 'Montserrat', sans-serif; 
+}
 
 /* ==========================================
    ACESSIBILIDADE: ALTO CONTRASTE (Alt+6)
