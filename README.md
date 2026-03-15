@@ -2,7 +2,7 @@
 
 Plataforma web interativa desenvolvida para apresentar o Planejamento Estratégico dos Consórcios Públicos do Estado da Bahia (Visão 2028-2031). O projeto foi construído com foco em **usabilidade, design moderno (Glassmorphism)** e **alta acessibilidade**, alinhando-se rigorosamente à identidade visual e aos padrões do Governo do Estado da Bahia.
 
-🔗 **Acesso ao Projeto:** [Insira o link do seu GitHub Pages aqui]
+🔗 **Acesso ao Projeto:** [https://jjuniorlopes.github.io/pagina-web-pe-mgc/]
 
 ---
 
