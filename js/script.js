@@ -436,7 +436,7 @@ function initializeModals() {
         openPilaresMainModal();
     });
 
-    function openObjetivoDetails(key) {
+    function openObjetivoDetails(key, titleColor) {
         if (objetivosData[key]) {
             const obj = objetivosData[key];
             const backBtnHtml = `
@@ -450,10 +450,22 @@ function initializeModals() {
 
             modalContent.classList.remove('cv-modal-wide');
             modalTitle.textContent = obj.title;
+            
+            // APLICA A COR PERSONALIZADA APENAS NO TÍTULO
+            if (titleColor) {
+                modalTitle.style.setProperty('color', titleColor, 'important');
+                modalTitle.style.setProperty('border-bottom-color', titleColor, 'important');
+            }
+
             modalBody.innerHTML = backBtnHtml + `<p style="font-size: 1.1rem; text-align: left;">${obj.description}</p>`;
             
             const btnVoltar = document.getElementById('btn-voltar-pilares');
-            btnVoltar.addEventListener('click', openPilaresMainModal);
+            btnVoltar.addEventListener('click', () => {
+                // LIMPA A COR AO VOLTAR PARA NÃO BUGAR AS OUTRAS TELAS
+                modalTitle.style.removeProperty('color');
+                modalTitle.style.removeProperty('border-bottom-color');
+                openPilaresMainModal();
+            });
             btnVoltar.focus();
         }
     }
@@ -683,14 +695,26 @@ function initializeModals() {
     function closeModal() {
         modal.style.display = 'none';
         modalContent.classList.remove('cv-modal-wide'); 
+        // GARANTE QUE A COR DO TÍTULO É RESETADA AO FECHAR NO 'X'
+        modalTitle.style.removeProperty('color');
+        modalTitle.style.removeProperty('border-bottom-color');
     }
 
     closeBtn.addEventListener('click', closeModal);
     
     modalBody.addEventListener('click', function(e) {
         if (e.target.closest('.btn-close-modal')) closeModal();
+        
         const objetivoBtn = e.target.closest('.objetivo-btn');
-        if (objetivoBtn) openObjetivoDetails(objetivoBtn.getAttribute('data-objetivo'));
+        if (objetivoBtn) {
+            // VERIFICA DE QUAL CAIXA VEM O CLIQUE PARA APLICAR A COR EXATA NO TÍTULO
+            let color = '';
+            if (objetivoBtn.classList.contains('btn-resultados')) color = '#2c4f74'; // Azul Resultados
+            else if (objetivoBtn.classList.contains('btn-engrenagem')) color = '#07888b'; // Verde Engrenagem
+            else if (objetivoBtn.classList.contains('btn-alicerce')) color = '#e67e22'; // Laranja Alicerce
+            
+            openObjetivoDetails(objetivoBtn.getAttribute('data-objetivo'), color);
+        }
     });
 
     window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
