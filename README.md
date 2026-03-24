@@ -60,5 +60,6 @@ O projeto foi construído utilizando tecnologias web nativas, garantindo leveza 
 │   └── styles.css      # Estilização completa, responsividade e acessibilidade
 ├── js/
 │   └── script.js       # Base de dados em JSON, lógica de modais e interações
+├── pdf/                # Arquivos em formato pdf para baixar
 ├── imagens/            # Logomarcas, banners e imagens de apoio
 └── README.md           # Documentação do projeto
