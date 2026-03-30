@@ -150,7 +150,7 @@ const cadeiaValorData = {
                 <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Suporte Jurídico</div></div>
                 <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Administração de Pessoal</div></div>
                 <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Gestão Contábil-Financeira</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.cog}</div><div class="cv-modern-title">Manutenção Eletromecânica</div></div>
+                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Manutenção Eletromecânica</div></div>
                 <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.computer}</div><div class="cv-modern-title">Gestão de T.I.</div></div>
                 <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Gestão de Contratos e Convênios</div></div>
                 <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Aquisição de Bens e Serviços</div></div>
