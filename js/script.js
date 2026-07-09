@@ -25,6 +25,7 @@ const svgIcons = {
     icon_trash: `<svg class="cv-modern-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>`,
     icon_plan: `<svg class="cv-modern-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`,
     
+    // Cores de stroke para o Mapa Estratégico
     alicerce: `<svg width="32" height="32" fill="none" stroke="#e67e22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;" aria-hidden="true"><rect x="3" y="14" width="6" height="6" rx="1"></rect><rect x="15" y="14" width="6" height="6" rx="1"></rect><path d="M6 14v-2a2 2 0 012-2h8a2 2 0 012 2v2"></path><circle cx="12" cy="6" r="3"></circle><path d="M12 2v1M12 9v1M16 6h1M7 6H6M14.83 3.17l.71-.71M8.46 8.12l.71-.71M14.83 8.83l.71.71M8.46 3.88l.71.71"></path></svg>`,
     engrenagem: `<svg width="32" height="32" fill="none" stroke="#07888b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 8V4M12 20v-4M8 12H4M20 12h-4M9.17 9.17l-2.83-2.83M17.66 17.66l-2.83-2.83M9.17 14.83l-2.83 2.83M17.66 6.34l-2.83 2.83"></path><circle cx="12" cy="2" r="2"></circle><circle cx="12" cy="22" r="2"></circle><circle cx="2" cy="12" r="2"></circle><circle cx="22" cy="12" r="2"></circle></svg>`,
     resultados: `<svg width="32" height="32" fill="none" stroke="#2c4f74" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;" aria-hidden="true"><polyline points="18 20 18 10 12 20 12 4 6 20 6 14"></polyline><polyline points="2 20 22 20"></polyline><polyline points="14 4 22 4 22 12"></polyline><line x1="22" y1="4" x2="12" y2="14"></line></svg>`
@@ -58,16 +59,16 @@ const mvvData = {
 // DADOS: Pilares (Objetivos detalhados)
 // ==========================================
 const objetivosData = {
-    estrutura: { title: "Adequar a estrutura organizacional às demandas estratégicas", description: "Desenvolver uma estrutura organizacional que atenda às necessidades estratégicas dos consórcios, incluindo definição de cargos, responsabilidades e hierarquias." },
-    processos: { title: "Uniformizar e informatizar os processos de suporte e finalísticos", description: "Padronizar e digitalizar todos os processos organizacionais, desde os processos de suporte administrativo até os processos finalísticos." },
-    pessoas: { title: "Aperfeiçoar os processos de gestão de pessoas", description: "Implementar práticas modernas de gestão de recursos humanos, incluindo recrutamento, seleção, capacitação, avaliação e desenvolvimento." },
-    receitas: { title: "Otimizar a relação entre receitas e despesas correntes", description: "Maximizar a eficiência na utilização dos recursos financeiros, buscando sempre a melhor relação custo-benefício." },
-    portfolio: { title: "Alinhar o portifólio de serviços às demandas dos consorciados", description: "Desenvolver e ofertar serviços que atendam efetivamente às necessidades e prioridades dos municípios consorciados." },
-    qualidade: { title: "Elevar a qualidade dos serviços realizados", description: "Implementar padrões de excelência na prestação de todos os serviços, estabelecendo métricas de qualidade." },
-    produtividade: { title: "Aumentar a produtividade e eficiência dos processos", description: "Otimizar os processos organizacionais para aumentar a produtividade das equipes e a eficiência na entrega de resultados." },
-    captacao: { title: "Sistematizar a captação de recursos nacionais e internacionais", description: "Desenvolver uma estratégia estruturada para identificação, elaboração e submissão de projetos para captação de recursos." },
-    equilibrio: { title: "Alcançar o equilíbrio econômico-financeiro", description: "Estabelecer uma gestão financeira sustentável que garanta o equilíbrio entre receitas e despesas." },
-    necessidades: { title: "Atender às necessidades e expectativas dos consorciados", description: "Garantir que todos os serviços e ações realizadas estejam alinhados com as necessidades reais dos consorciados." }
+    estrutura: { title: "Adequar a estrutura organizacional às demandas estratégicas", description: "Esse objetivo busca ajustar a estrutura do consórcio para que ela seja compatível com seus desafios atuais e futuros. Isso envolve definir melhor áreas, funções, responsabilidades, perfis profissionais e formas de organização do trabalho, de modo que a instituição tenha uma base sólida para sustentar sua estratégia." },
+    processos: { title: "Uniformizar e informatizar os processos de suporte e finalísticos", description: "Esse objetivo procura organizar, padronizar e modernizar a forma como o consórcio executa suas atividades, tanto nas áreas de apoio quanto nas áreas finalísticas. A intenção é reduzir improvisações, aumentar a segurança operacional, facilitar o controle e ampliar o uso de sistemas e ferramentas digitais na gestão e na execução dos processos." },
+    pessoas: { title: "Aperfeiçoar os processos de gestão de pessoas", description: "Esse objetivo está voltado ao fortalecimento da gestão de pessoas como elemento central do desempenho organizacional. Envolve melhorar práticas relacionadas à definição de perfis, desenvolvimento de competências, organização das equipes, valorização profissional e criação de condições para que as pessoas contribuam melhor para os resultados do consórcio." },
+    receitas: { title: "Otimizar a relação entre receitas e despesas correntes", description: "Esse objetivo busca melhorar o comportamento das receitas e despesas do dia a dia do consórcio. A intenção é ampliar sua capacidade de operação com maior racionalidade no custeio, melhor uso dos recursos correntes e mais estabilidade para a manutenção das atividades." },
+    portfolio: { title: "Alinhar o portifólio de serviços às demandas dos consorciados", description: "Esse objetivo procura garantir que a atuação do consórcio esteja conectada às necessidades reais dos municípios consorciados. Isso envolve tanto fortalecer e estruturar melhor os serviços já demandados quanto prospectar novas oportunidades de atuação, incorporando linhas de ação que possam ampliar a capacidade de resposta do consórcio às demandas do território." },
+    qualidade: { title: "Elevar a qualidade dos serviços realizados", description: "Trata-se de melhorar o padrão de entrega dos serviços executados pelo consórcio, buscando maior conformidade técnica, maior confiabilidade e melhores resultados para os municípios consorciados. O objetivo pressupõe atenção tanto à qualidade percebida quanto à qualidade efetivamente entregue." },
+    produtividade: { title: "Aumentar a produtividade e eficiência dos processos", description: "Esse objetivo procura fazer com que o consórcio produza mais e melhor com os recursos disponíveis. O foco está em eliminar desperdícios, reduzir retrabalho, melhorar fluxos de trabalho e tornar a execução mais ágil, econômica e confiável." },
+    captacao: { title: "Sistematizar a captação de recursos nacionais e internacionais", description: "Esse objetivo busca estruturar a captação de recursos como uma atividade permanente e planejada, e não apenas ocasional. A ideia é desenvolver capacidade institucional para identificar oportunidades, elaborar propostas, articular parcerias e ampliar o acesso a fontes externas de financiamento." },
+    equilibrio: { title: "Alcançar o equilíbrio econômico-financeiro", description: "Esse objetivo busca assegurar a sustentabilidade global do consórcio no tempo, de modo que ele tenha condições de manter suas atividades, honrar compromissos e continuar se desenvolvendo. Envolve equilíbrio entre receitas, despesas e investimentos, com responsabilidade fiscal e capacidade de planejamento financeiro." },
+    necessidades: { title: "Atender às necessidades e expectativas dos consorciados", description: "Esse objetivo expressa o compromisso do consórcio com a satisfação dos municípios que dele participam. Mais do que prestar serviços, trata-se de entregar soluções úteis, relevantes e percebidas como valiosas pelos consorciados, considerando suas necessidades, prioridades e expectativas em relação à atuação consorcial." }
 };
 
 // ==========================================
@@ -76,22 +77,22 @@ const objetivosData = {
 // ==========================================
 const pilaresMainContent = `
     <div class="pilares-grid">
-        <div class="pilar resultados glass-card" tabindex="0">
+        <div class="pilar resultados" tabindex="0">
             <h3 style="display: flex; align-items: center; justify-content: center; color: #2c4f74; font-size: 1.5rem; margin-bottom: 10px;">
                 ${svgIcons.resultados} RESULTADOS
             </h3>
-            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">Equilíbrio financeiro e satisfação dos consorciados</p>
+            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">A perspectiva de Resultados expressa a culminância dos esforços realizados nas demais perspectivas. Ela traduz os efeitos mais relevantes da atuação do consórcio sobre seus beneficiários diretos e principais partes interessadas, especialmente os consorciados, o Governo do Estado e a população atendida pelas políticas públicas executadas ou apoiadas pelo consórcio.</p>
             <div class="objetivos-list">
                 <button class="objetivo-btn btn-resultados" data-objetivo="equilibrio">Alcançar o equilíbrio econômico-financeiro</button>
                 <button class="objetivo-btn btn-resultados" data-objetivo="necessidades">Atender às necessidades e expectativas dos consorciados</button>
             </div>
         </div>
 
-        <div class="pilar engrenagem glass-card" tabindex="0">
+        <div class="pilar engrenagem" tabindex="0">
             <h3 style="display: flex; align-items: center; justify-content: center; color: #07888b; font-size: 1.5rem; margin-bottom: 10px;">
                 ${svgIcons.engrenagem} ENGRENAGEM
             </h3>
-            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">Otimização de processos e qualidade de serviços</p>
+            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">A perspectiva de Engrenagem está relacionada ao funcionamento da cadeia de valor do consórcio, especialmente aos processos finalísticos por meio dos quais são geradas entregas para os consorciados e para a população. Ela também envolve condições operacionais diretamente ligadas à capacidade de executar essas entregas com qualidade, produtividade e sustentabilidade.</p>
             <div class="objetivos-list">
                 <button class="objetivo-btn btn-engrenagem" data-objetivo="receitas">Otimizar a relação entre receitas e despesas correntes</button>
                 <button class="objetivo-btn btn-engrenagem" data-objetivo="portfolio">Alinhar o portifólio de serviços às demandas dos consorciados</button>
@@ -101,11 +102,11 @@ const pilaresMainContent = `
             </div>
         </div>
 
-        <div class="pilar alicerce glass-card" tabindex="0">
+        <div class="pilar alicerce" tabindex="0">
             <h3 style="display: flex; align-items: center; justify-content: center; color: #e67e22; font-size: 1.5rem; margin-bottom: 10px;">
                 ${svgIcons.alicerce} ALICERCE
             </h3>
-            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">Adequação da estrutura organizacional</p>
+            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">A perspectiva de Alicerce reúne os elementos estruturantes que sustentam o funcionamento e o desenvolvimento do consórcio ao longo do tempo. Ela abrange aspectos como estrutura organizacional, processos internos, tecnologia, sistemas, gestão de pessoas e demais capacidades institucionais que dão base à atuação do consórcio.</p>
             <div class="objetivos-list">
                 <button class="objetivo-btn btn-alicerce" data-objetivo="estrutura">Adequar a estrutura organizacional às demandas estratégicas</button>
                 <button class="objetivo-btn btn-alicerce" data-objetivo="processos">Uniformizar e informatizar os processos de suporte e finalísticos</button>
@@ -136,27 +137,48 @@ const iniciativasData = {
 };
 
 // ==========================================
+// DADOS: Detalhamento dos Processos de Suporte
+// ==========================================
+const suporteData = {
+    planejamento: { title: "PLANEJAMENTO E GESTÃO ORÇAMENTÁRIA", description: "Esse processo envolve a organização do planejamento financeiro e orçamentário do consórcio, assegurando a previsão, alocação e acompanhamento adequado dos recursos. Seu papel é dar suporte à tomada de decisão e garantir que a execução das atividades ocorra de forma compatível com as prioridades institucionais e com a disponibilidade orçamentária." },
+    capacitacao: { title: "CAPACITAÇÃO TÉCNICA E GERENCIAL", description: "Esse processo está voltado ao desenvolvimento de conhecimentos e competências necessários ao bom desempenho das equipes. Ele busca qualificar dirigentes, técnicos e colaboradores, fortalecendo a capacidade institucional do consórcio para planejar, gerir, executar e aperfeiçoar suas atividades." },
+    auditoria: { title: "AUDITORIA E CONTROLE INTERNO", description: "Esse processo tem a função de acompanhar, verificar e avaliar a regularidade dos atos administrativos, financeiros e operacionais do consórcio. Seu objetivo é fortalecer a conformidade, prevenir falhas, reduzir riscos e contribuir para maior transparência, segurança e confiabilidade na gestão." },
+    captacao: { title: "CAPTAÇÃO DE RECURSOS", description: "Esse processo busca identificar oportunidades de financiamento e apoio institucional para ampliar a capacidade de atuação do consórcio. Envolve a prospecção de fontes de recursos, a elaboração de propostas e a articulação com parceiros e financiadores, de modo a viabilizar investimentos e novas iniciativas." },
+    juridico: { title: "SUPORTE JURÍDICO", description: "Esse processo oferece respaldo legal às decisões, instrumentos e ações do consórcio. Seu papel é orientar a atuação institucional à luz da legislação aplicável, contribuindo para a segurança jurídica de contratos, convênios, processos administrativos, normas internas e demais atos da gestão." },
+    pessoal: { title: "ADMINISTRAÇÃO DE PESSOAL", description: "Esse processo compreende as rotinas administrativas relacionadas à gestão de vínculos de trabalho e à vida funcional dos colaboradores. Inclui atividades como registros, movimentações, frequência, obrigações trabalhistas e organização documental, assegurando regularidade e suporte à gestão de pessoas." },
+    contabil: { title: "GESTÃO CONTÁBIL-FINANCEIRA", description: "Esse processo envolve o registro, controle e acompanhamento da execução contábil e financeira do consórcio. Seu objetivo é assegurar fidedignidade das informações, cumprimento de obrigações legais e apoio à gestão dos recursos, permitindo maior controle sobre receitas, despesas e resultados financeiros." },
+    eletromecanica: { title: "MANUTENÇÃO ELETROMECÂNICA", description: "Esse processo busca assegurar o funcionamento adequado de máquinas, equipamentos e sistemas que dependem de componentes elétricos e mecânicos. Sua finalidade é prevenir falhas, reduzir interrupções e garantir melhores condições de operação dos ativos necessários à atuação do consórcio." },
+    ti: { title: "GESTÃO DE TECNOLOGIA DA INFORMAÇÃO(TI)", description: "Esse processo compreende a organização, manutenção e evolução dos recursos tecnológicos utilizados pelo consórcio. Envolve sistemas, infraestrutura, suporte técnico, segurança da informação e soluções digitais que contribuem para a integração, a confiabilidade dos dados e a melhoria dos processos." },
+    contratos: { title: "GESTÃO DE CONTRATOS E CONVÊNIOS", description: "Esse processo trata da formalização, acompanhamento e controle dos instrumentos firmados pelo consórcio com fornecedores, parceiros e instituições públicas ou privadas. Seu objetivo é assegurar que contratos e convênios sejam bem estruturados, corretamente executados e monitorados ao longo de sua vigência." },
+    aquisicao: { title: "AQUISIÇÃO DE BENS E SERVIÇOS", description: "Esse processo reúne as atividades necessárias para planejar, contratar e adquirir os bens e serviços de que o consórcio necessita para funcionar e executar suas ações. Seu papel é garantir abastecimento adequado, observância das normas aplicáveis e maior eficiência no uso dos recursos públicos." },
+    patrimonial: { title: "GESTÃO PATRIMONIAL", description: "Esse processo está relacionado ao controle, conservação e utilização dos bens patrimoniais do consórcio. Seu objetivo é assegurar que esses bens sejam devidamente registrados, preservados e utilizados de forma adequada, contribuindo para a boa gestão dos ativos institucionais." },
+    frota: { title: "GESTÃO DA FROTA DE VEÍCULOS", description: "Esse processo envolve o planejamento, controle, manutenção e uso dos veículos vinculados ao consórcio. Sua finalidade é garantir disponibilidade, segurança, economicidade e adequação da frota às necessidades operacionais e logísticas da instituição." },
+    comunicacao: { title: "COMUNICAÇÃO SOCIAL", description: "Esse processo busca organizar a comunicação institucional do consórcio com seus públicos de interesse, tanto internos quanto externos. Envolve divulgação de informações, apoio à transparência, fortalecimento da imagem institucional e ampliação da clareza sobre ações, serviços e resultados do consórcio." }
+};
+
+// ==========================================
 // DADOS: Cadeia de Valor 
 // ==========================================
 const cadeiaValorData = {
     suporte: {
         title: "PROCESSOS DE SUPORTE",
         content: `
+            <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos de suporte correspondem ao conjunto de atividades que dão sustentação ao funcionamento do consórcio e viabilizam a execução de seus processos finalísticos. Embora não constituam, em si, as entregas principais aos consorciados e à população, são indispensáveis para assegurar organização, regularidade, eficiência e continuidade à atuação institucional.</p>
             <div class="cv-modern-grid">
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.chart}</div><div class="cv-modern-title">Planejamento e Gestão Orçamentária</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Capacitação Técnica e Gerencial</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Auditoria e Controle Interno</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Captação de Recursos</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Suporte Jurídico</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Administração de Pessoal</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Gestão Contábil-Financeira</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Manutenção Eletromecânica</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.computer}</div><div class="cv-modern-title">Gestão de T.I.</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Gestão de Contratos e Convênios</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Aquisição de Bens e Serviços</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Gestão Patrimonial</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.road}</div><div class="cv-modern-title">Gestão da Frota de Veículos</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Comunicação Social</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="planejamento"><div class="cv-modern-icon">${svgIcons.chart}</div><div class="cv-modern-title">Planejamento e Gestão Orçamentária</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="capacitacao"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Capacitação Técnica e Gerencial</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="auditoria"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Auditoria e Controle Interno</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="captacao"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Captação de Recursos</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="juridico"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Suporte Jurídico</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="pessoal"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Administração de Pessoal</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="contabil"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Gestão Contábil-Financeira</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="eletromecanica"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Manutenção Eletromecânica</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="ti"><div class="cv-modern-icon">${svgIcons.computer}</div><div class="cv-modern-title">Gestão de Tecnologia da Informação(TI)</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="contratos"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Gestão de Contratos e Convênios</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="aquisicao"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Aquisição de Bens e Serviços</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="patrimonial"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Gestão Patrimonial</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="frota"><div class="cv-modern-icon">${svgIcons.road}</div><div class="cv-modern-title">Gestão da Frota de Veículos</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="comunicacao"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Comunicação Social</div></div>
             </div>`
     },
     primarias: {
@@ -182,9 +204,9 @@ const cadeiaValorData = {
         title: "BENEFICIÁRIOS",
         content: `
             <div class="cv-modern-grid">
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Municípios Consorciados</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Sociedade</div></div>
-                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Governo do Estado</div></div>
+                <div class="cv-modern-card cv-card-trigger" tabindex="0"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Municípios Consorciados</div></div>
+                <div class="cv-modern-card cv-card-trigger" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Sociedade</div></div>
+                <div class="cv-modern-card cv-card-trigger" tabindex="0"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Governo do Estado</div></div>
             </div>`
     }
 };
@@ -220,7 +242,7 @@ const indicadoresData = {
     infraestrutura: { title: "Indicadores: Execução de obras de infraestrutura urbana e edificações públicas", items: [{ indicador: "Qualidade do serviço prestado", metrica: "Nota de pesquisa de qualidade percebida" }, { indicador: "Cumprimento do prazo de execução", metrica: "(Qtde de obras realizadas no prazo / Qtde total de obras realizadas) x 100" }] },
     educacao: { title: "Indicadores: Fortalecimento das políticas de educação, cultura, esporte e turismo", items: [{ indicador: "Cumprimento de iniciativas planejadas", metrica: "(Ações realizadas / Ações previstas) x 100" }] },
     maquinas: { title: "Indicadores: Disponibilização de máquinas e equipamentos", items: [{ indicador: "Disponibilidade máxima da máquina/equipamento para uso", metrica: "(Horas com máquina disponível / Qtde total de horas de cessão) x 100" }, { indicador: "Margem favorável de locação", metrica: "(Valor recebido por hora de cessão onerosa / Custo por hora de máquina)" }] },
-    habitacao: { title: "Indicadores: Execução de obras de habitação", items: [{ indicador: "Qualidade do serviço prestado", metrica: "Nota de pesquisa de qualidade" }, { indicador: "Cumprimento do prazo de execução", metrica: "(Qtde de obras realizadas no prazo / Qtde total de obras realizadas) x 100" }] },
+    habitacao: { title: "Indicadores: Execução de obras de habitação", items: [{ indicador: "Qualidade do serviço prestado", metrica: "Nota de pesquisa de qualidade" }, { indicador: "Cumprimento do prazo de execution", metrica: "(Qtde de obras realizadas no prazo / Qtde total de obras realizadas) x 100" }] },
     residuos: { title: "Indicadores: Gestão de Resíduos Sólidos", items: [{ indicador: "Cumprimento do Plano de Resíduos Sólidos", metrica: "(Ações realizadas / Ações previstas no plano) x 100" }] },
     planos: { title: "Indicadores: Elaboração de Planos e Projetos", items: [{ indicador: "Qualidade dos planos/projetos", metrica: "Nota de pesquisa de qualidade percebida" }, { indicador: "Cumprimento do prazo de elaboração", metrica: "(Qtde de itens elaborados no prazo / Qtde total de itens elaborados) x 100" }] }
 };
@@ -458,15 +480,7 @@ function initializeModals() {
             }
 
             modalBody.innerHTML = backBtnHtml + `<p style="font-size: 1.1rem; text-align: left;">${obj.description}</p>`;
-            
-            const btnVoltar = document.getElementById('btn-voltar-pilares');
-            btnVoltar.addEventListener('click', () => {
-                // LIMPA A COR AO VOLTAR PARA NÃO BUGAR AS OUTRAS TELAS
-                modalTitle.style.removeProperty('color');
-                modalTitle.style.removeProperty('border-bottom-color');
-                openPilaresMainModal();
-            });
-            btnVoltar.focus();
+            document.getElementById('btn-voltar-pilares').focus();
         }
     }
 
@@ -479,12 +493,6 @@ function initializeModals() {
         modalBody.innerHTML = btnVoltarGlobal + cadeiaValorMainContent;
         modal.style.display = 'flex';
         document.querySelector('.btn-close-modal').focus();
-
-        // RE-ATRELANDO OS EVENTOS APÓS RENDERIZAR O HTML NO MODAL
-        addKeyboardSupport(document.querySelectorAll('.cv-card-trigger'), function() {
-            const key = this.getAttribute('data-cv');
-            if (cadeiaValorData[key]) openCadeiaValorSubModal(key);
-        });
     }
 
     addKeyboardSupport(document.querySelectorAll('.cv-main-trigger'), function() {
@@ -504,15 +512,28 @@ function initializeModals() {
         modalContent.classList.add('cv-modal-wide'); 
         modalTitle.textContent = cadeiaValorData[key].title;
         modalBody.innerHTML = backBtnHtml + cadeiaValorData[key].content;
-        
-        const btnVoltarCvMain = document.getElementById('btn-voltar-cv-main');
-        btnVoltarCvMain.addEventListener('click', openCadeiaValorMainModal);
-        btnVoltarCvMain.focus();
+        document.getElementById('btn-voltar-cv-main').focus();
+    }
 
-        if (key === 'primarias') {
-            addKeyboardSupport(document.querySelectorAll('.inner-card-trigger'), function() {
-                openIniciativaDetails(this.getAttribute('data-iniciativa'));
-            });
+    function openSuporteDetails(key) {
+        if (suporteData[key]) {
+            const sup = suporteData[key];
+            const backBtnHtml = `
+                <button id="btn-voltar-suporte" class="btn-voltar-moderno" aria-label="Voltar para Processos de Suporte">
+                    <span class="icon-circle-voltar" aria-hidden="true">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+                    </span>
+                    <span class="texto-voltar">Voltar para Processos de Suporte</span>
+                </button>
+            `;
+
+            modalContent.classList.remove('cv-modal-wide'); 
+            modalTitle.textContent = sup.title;
+            modalBody.innerHTML = `
+                ${backBtnHtml}
+                <p style="font-size: 1.1rem; text-align: justify;">${sup.description}</p>
+            `;
+            document.getElementById('btn-voltar-suporte').focus();
         }
     }
 
@@ -539,10 +560,7 @@ function initializeModals() {
                 <h4 style="color: var(--primary-color); margin-bottom: 10px; text-align: left;">Principais atividades:</h4>
                 <ul style="list-style-type: none; padding: 0;">${detalhesHtml}</ul>
             `;
-            
-            const btnVoltarPrim = document.getElementById('btn-voltar-primarias');
-            btnVoltarPrim.addEventListener('click', () => openCadeiaValorSubModal('primarias'));
-            btnVoltarPrim.focus();
+            document.getElementById('btn-voltar-primarias').focus();
         }
     }
 
@@ -557,23 +575,20 @@ function initializeModals() {
         modalBody.innerHTML = btnVoltarGlobal + indicadoresFinalisticosMainContent;
         modal.style.display = 'flex';
         document.querySelector('.btn-close-modal').focus();
-
-        // RE-ATRELANDO OS EVENTOS PARA OS CARDS INJETADOS
-        addKeyboardSupport(document.querySelectorAll('.ind-card-trigger'), function() {
-            const key = this.getAttribute('data-atividade');
-            if (indicadoresData[key]) openIndicadorFinalisticoDetails(key);
-        });
     }
 
     let currentIndicadorItems = [];
     let currentIndicadorIndex = 0;
 
-    function openIndicadorFinalisticoDetails(key) {
-        currentIndicadorItems = indicadoresData[key].items;
-        currentIndicadorIndex = 0; 
-        modalContent.classList.remove('cv-modal-wide'); 
-        modalTitle.textContent = indicadoresData[key].title;
-        
+    function renderIndicadorTable() {
+        const item = currentIndicadorItems[currentIndicadorIndex];
+        const totalItems = currentIndicadorItems.length;
+        const isFirst = currentIndicadorIndex === 0;
+        const isLast = currentIndicadorIndex === (totalItems - 1);
+
+        const svgPrev = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>`;
+        const svgNext = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>`;
+
         const backBtnHtml = `
             <button id="btn-voltar-ind-fin" class="btn-voltar-moderno" aria-label="Voltar para Indicadores">
                 <span class="icon-circle-voltar" aria-hidden="true">
@@ -583,52 +598,38 @@ function initializeModals() {
             </button>
         `;
 
-        function renderIndicadorTable() {
-            const item = currentIndicadorItems[currentIndicadorIndex];
-            const totalItems = currentIndicadorItems.length;
-            const isFirst = currentIndicadorIndex === 0;
-            const isLast = currentIndicadorIndex === (totalItems - 1);
+        let html = backBtnHtml + `
+            <div class="table-responsive">
+                <table class="modal-table" aria-label="Tabela de indicador e métrica">
+                    <thead><tr><th>Indicador</th><th>Métrica</th></tr></thead>
+                    <tbody><tr><td style="font-weight: 500;">${item.indicador}</td><td>${item.metrica}</td></tr></tbody>
+                </table>
+            </div>
+        `;
 
-            const svgPrev = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>`;
-            const svgNext = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>`;
-
-            let html = backBtnHtml + `
-                <div class="table-responsive">
-                    <table class="modal-table" aria-label="Tabela de indicador e métrica">
-                        <thead><tr><th>Indicador</th><th>Métrica</th></tr></thead>
-                        <tbody><tr><td style="font-weight: 500;">${item.indicador}</td><td>${item.metrica}</td></tr></tbody>
-                    </table>
+        if (totalItems > 1) {
+            html += `
+                <div class="pagination-controls">
+                    <button id="btn-prev-ind" class="pagination-btn" ${isFirst ? 'disabled' : ''} aria-label="Indicador anterior">
+                        ${svgPrev} Anterior
+                    </button>
+                    <span class="page-info" aria-live="polite">${currentIndicadorIndex + 1} de ${totalItems}</span>
+                    <button id="btn-next-ind" class="pagination-btn" ${isLast ? 'disabled' : ''} aria-label="Próximo indicador">
+                        Próximo ${svgNext}
+                    </button>
                 </div>
             `;
-
-            if (totalItems > 1) {
-                html += `
-                    <div class="pagination-controls">
-                        <button id="btn-prev-ind" class="pagination-btn" ${isFirst ? 'disabled' : ''} aria-label="Indicador anterior">
-                            ${svgPrev} Anterior
-                        </button>
-                        <span class="page-info" aria-live="polite">${currentIndicadorIndex + 1} de ${totalItems}</span>
-                        <button id="btn-next-ind" class="pagination-btn" ${isLast ? 'disabled' : ''} aria-label="Próximo indicador">
-                            Próximo ${svgNext}
-                        </button>
-                    </div>
-                `;
-            }
-
-            modalBody.innerHTML = html;
-
-            const btnVoltar = document.getElementById('btn-voltar-ind-fin');
-            if (btnVoltar) btnVoltar.addEventListener('click', openIndicadoresFinalisticosMainModal);
-
-            if (totalItems > 1) {
-                const btnPrev = document.getElementById('btn-prev-ind');
-                const btnNext = document.getElementById('btn-next-ind');
-                if (btnPrev) btnPrev.addEventListener('click', () => { if (currentIndicadorIndex > 0) { currentIndicadorIndex--; renderIndicadorTable(); }});
-                if (btnNext) btnNext.addEventListener('click', () => { if (currentIndicadorIndex < totalItems - 1) { currentIndicadorIndex++; renderIndicadorTable(); }});
-            }
         }
-        
+        modalBody.innerHTML = html;
+    }
+
+    function openIndicadorFinalisticoDetails(key) {
+        currentIndicadorItems = indicadoresData[key].items;
+        currentIndicadorIndex = 0; 
+        modalContent.classList.remove('cv-modal-wide'); 
+        modalTitle.textContent = indicadoresData[key].title;
         renderIndicadorTable();
+        document.getElementById('btn-voltar-ind-fin').focus();
     }
 
     addKeyboardSupport([document.getElementById('btn-indicadores-finalisticos')], function() {
@@ -642,12 +643,6 @@ function initializeModals() {
         modalBody.innerHTML = btnVoltarGlobal + indicadoresEstrategicosMainContent;
         modal.style.display = 'flex';
         document.querySelector('.btn-close-modal').focus();
-
-        // RE-ATRELANDO OS EVENTOS PARA OS CARDS INJETADOS
-        addKeyboardSupport(document.querySelectorAll('.ind-est-card-trigger'), function() {
-            const key = this.getAttribute('data-ind');
-            if (indicadoresEstrategicosData[key]) openIndicadorEstrategicoDetails(key);
-        });
     }
 
     function openIndicadorEstrategicoDetails(key) {
@@ -678,10 +673,7 @@ function initializeModals() {
                 
                 <p style="font-size: 0.95rem; color: #6c757d; font-style: italic; text-align: left;"><strong>Observações:</strong> ${ind.obs}</p>
             `;
-            
-            const btnVoltarIndEst = document.getElementById('btn-voltar-ind-est');
-            btnVoltarIndEst.addEventListener('click', openIndicadoresEstrategicosMainModal);
-            btnVoltarIndEst.focus();
+            document.getElementById('btn-voltar-ind-est').focus();
         }
     }
 
@@ -690,7 +682,7 @@ function initializeModals() {
     });
 
     // ----------------------------------------------------
-    // DELEGAÇÃO DE EVENTOS E FECHAMENTO DO MODAL
+    // DELEGAÇÃO DE EVENTOS GLOBAL (O Segredo para Nunca Quebrar)
     // ----------------------------------------------------
     function closeModal() {
         modal.style.display = 'none';
@@ -703,8 +695,11 @@ function initializeModals() {
     closeBtn.addEventListener('click', closeModal);
     
     modalBody.addEventListener('click', function(e) {
-        if (e.target.closest('.btn-close-modal')) closeModal();
         
+        // 1. Fechar Modal
+        if (e.target.closest('.btn-close-modal')) { closeModal(); return; }
+
+        // 2. Mapa Estratégico (Perspectivas) - Abrir Detalhe com Cor no Título
         const objetivoBtn = e.target.closest('.objetivo-btn');
         if (objetivoBtn) {
             // VERIFICA DE QUAL CAIXA VEM O CLIQUE PARA APLICAR A COR EXATA NO TÍTULO
@@ -714,7 +709,92 @@ function initializeModals() {
             else if (objetivoBtn.classList.contains('btn-alicerce')) color = '#e67e22'; // Laranja Alicerce
             
             openObjetivoDetails(objetivoBtn.getAttribute('data-objetivo'), color);
+            return;
         }
+        
+        // 3. Mapa Estratégico - Botão Voltar
+        if (e.target.closest('#btn-voltar-pilares')) {
+            modalTitle.style.removeProperty('color');
+            modalTitle.style.removeProperty('border-bottom-color');
+            openPilaresMainModal();
+            return;
+        }
+
+        // 4. Cadeia de Valor - Abrir Sub-Grupos
+        const cvCardTrigger = e.target.closest('.cv-card-trigger');
+        if (cvCardTrigger) {
+            openCadeiaValorSubModal(cvCardTrigger.getAttribute('data-cv'));
+            return;
+        }
+
+        // 5. Cadeia de Valor - Botão Voltar para Tela Principal da Cadeia
+        if (e.target.closest('#btn-voltar-cv-main')) {
+            openCadeiaValorMainModal();
+            return;
+        }
+
+        // 6. Cadeia de Valor - Abrir Detalhe (Iniciativa)
+        const innerCardTrigger = e.target.closest('.inner-card-trigger');
+        if (innerCardTrigger) {
+            openIniciativaDetails(innerCardTrigger.getAttribute('data-iniciativa'));
+            return;
+        }
+
+        // 7. Cadeia de Valor - Botão Voltar da Iniciativa para Sub-Grupo Primárias
+        if (e.target.closest('#btn-voltar-primarias')) {
+            openCadeiaValorSubModal('primarias');
+            return;
+        }
+
+        // 7B. Cadeia de Valor - Abrir Detalhe do Suporte
+        const suporteCardTrigger = e.target.closest('.suporte-card-trigger');
+        if (suporteCardTrigger) {
+            openSuporteDetails(suporteCardTrigger.getAttribute('data-suporte'));
+            return;
+        }
+
+        // 7C. Cadeia de Valor - Botão Voltar do Detalhe para Sub-Grupo Suporte
+        if (e.target.closest('#btn-voltar-suporte')) {
+            openCadeiaValorSubModal('suporte');
+            return;
+        }
+
+        // 8. Indicadores Finalísticos - Abrir Tabela
+        const indCardTrigger = e.target.closest('.ind-card-trigger');
+        if (indCardTrigger) {
+            openIndicadorFinalisticoDetails(indCardTrigger.getAttribute('data-atividade'));
+            return;
+        }
+
+        // 9. Indicadores Finalísticos - Botão Voltar
+        if (e.target.closest('#btn-voltar-ind-fin')) {
+            openIndicadoresFinalisticosMainModal();
+            return;
+        }
+
+        // 10. Indicadores Finalísticos - Paginação
+        if (e.target.closest('#btn-prev-ind')) {
+            if (currentIndicadorIndex > 0) { currentIndicadorIndex--; renderIndicadorTable(); }
+            return;
+        }
+        if (e.target.closest('#btn-next-ind')) {
+            if (currentIndicadorIndex < currentIndicadorItems.length - 1) { currentIndicadorIndex++; renderIndicadorTable(); }
+            return;
+        }
+
+        // 11. Indicadores Estratégicos - Abrir Detalhe
+        const indEstCardTrigger = e.target.closest('.ind-est-card-trigger');
+        if (indEstCardTrigger) {
+            openIndicadorEstrategicoDetails(indEstCardTrigger.getAttribute('data-ind'));
+            return;
+        }
+
+        // 12. Indicadores Estratégicos - Botão Voltar
+        if (e.target.closest('#btn-voltar-ind-est')) {
+            openIndicadoresEstrategicosMainModal();
+            return;
+        }
+
     });
 
     window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
