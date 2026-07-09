@@ -130,9 +130,39 @@ h2, .modal-title-custom { border-bottom: 3px solid var(--accent-color) !importan
 
 /* --- Footer --- */
 footer { text-align: center; padding: 30px; outline: none; }
-.footer-content { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
-.footer-logo { height: 45px; width: auto; margin-bottom: 0; }
-.footer-version { font-size: 0.85rem; color: #666; }
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.footer-logo-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 45px;
+    width: auto;
+}
+
+.footer-support{
+    margin-top:4px;
+    font-size:0.70rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#666;
+}
+
+.footer-version {
+    font-size: 0.85rem;
+    color: #666;
+}
 
 /* --- ESTILOS DOS CARDS INTERATIVOS E MÃOZINHA (CURSOR) --- */
 .iniciativas-modern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
@@ -145,13 +175,13 @@ footer { text-align: center; padding: 30px; outline: none; }
 .cv-modern-card { background-color: #ffffff; border: 2px solid var(--primary-color); border-radius: 6px; padding: 30px 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: all 0.3s ease; min-height: 180px; }
 
 /* ESSA É A CLASSE QUE GARANTE A MÃOZINHA (CURSOR: POINTER) PARA TODOS OS CARDS CLICÁVEIS */
-.cv-card-trigger, .ind-card-trigger, .inner-card-trigger, .ind-est-card-trigger, .ind-main-trigger, .cv-main-trigger, .pilares-trigger { 
+.cv-card-trigger, .ind-card-trigger, .inner-card-trigger, .suporte-card-trigger, .ind-est-card-trigger, .ind-main-trigger, .cv-main-trigger, .pilares-trigger { 
     cursor: pointer; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
 }
 
-.cv-card-trigger:hover, .ind-card-trigger:hover, .inner-card-trigger:hover, .ind-est-card-trigger:hover, .ind-main-trigger:hover, .cv-main-trigger:hover, .pilares-trigger:hover,
-.cv-card-trigger:focus, .ind-card-trigger:focus, .inner-card-trigger:focus, .ind-est-card-trigger:focus, .ind-main-trigger:focus, .cv-main-trigger:focus, .pilares-trigger:focus { 
+.cv-card-trigger:hover, .ind-card-trigger:hover, .inner-card-trigger:hover, .suporte-card-trigger:hover, .ind-est-card-trigger:hover, .ind-main-trigger:hover, .cv-main-trigger:hover, .pilares-trigger:hover,
+.cv-card-trigger:focus, .ind-card-trigger:focus, .inner-card-trigger:focus, .suporte-card-trigger:focus, .ind-est-card-trigger:focus, .ind-main-trigger:focus, .cv-main-trigger:focus, .pilares-trigger:focus { 
     transform: translateY(-5px); 
     box-shadow: 0 10px 15px rgba(27, 98, 184, 0.15); 
     background-color: #f8fbff; 
