@@ -73,7 +73,6 @@ const objetivosData = {
 
 // ==========================================
 // ESTRUTURA HTML DA TELA PRINCIPAL DAS PERSPECTIVAS
-// Ordem: Resultados (1º), Engrenagem (2º), Alicerce (3º)
 // ==========================================
 const pilaresMainContent = `
     <div class="pilares-grid">
@@ -133,7 +132,7 @@ const iniciativasData = {
     maquinas: { title: "Disponibilização de máquinas e equipamentos", description: "Esse processo consiste na disponibilização e gestão compartilhada de máquinas e equipamentos para apoiar a execução de obras, serviços e ações operacionais nos municípios consorciados. Seu objetivo é otimizar recursos, ampliar a capacidade de atendimento e viabilizar intervenções de interesse comum.", detalhes: ["Tratores", "Motoniveladoras", "Retroescavadeiras", "Caçambas, pás carregadeiras e equipamentos correlatos"] },
     habitacao: { title: "Execução de obras de habitação", description: "Esse processo envolve a realização de ações e empreendimentos voltados à melhoria das condições de moradia da população. Seu foco está na promoção de soluções habitacionais que contribuam para habitação digna, especialmente em contextos de maior vulnerabilidade.", detalhes: ["Construção de unidades habitacionais", "Reforma e melhoria de moradias", "Apoio à implantação de empreendimentos habitacionais", "Ações complementares de qualificação habitacional"] },
     residuos: { title: "Gestão de Resíduos Sólidos", description: "Esse processo envolve a estruturação de soluções consorciadas para o manejo e a destinação adequada de resíduos sólidos, buscando ganhos de escala, redução de custos e maior sustentabilidade ambiental. Seu foco está na organização regionalizada de sistemas e ações voltadas à gestão de resíduos.", detalhes: ["Implantação de coleta seletiva", "Apoio à destinação final ambientalmente adequada", "Fomento a iniciativas de reciclagem e reaproveitamento", "Campanhas de educação ambiental relacionadas aos resíduos"] },
-    planos: { title: "Elaboração de Planos e Projetos", description: "Esse processo compreende a produção de estudos, planos e projetos técnicos destinados a orientar o desenvolvimento territorial, estruturar intervenções e apoiar a captação de recursos. Seu objetivo é qualificar o planejamento e aumentar a capacidade dos municípios e consórcios de transformar demandas em iniciativas viáveis.", detalhes: ["Elaboração de projetos para captação de recursos", "EEstudos de viabilidade técnica", "Elaboração ou revisão de planos municipais e regionais", "Desenvolvimento de planos setoriais integrados"] }
+    planos: { title: "Elaboração de Planos e Projetos", description: "Esse processo compreende a produção de estudos, planos e projetos técnicos destinados a orientar o desenvolvimento territorial, estruturar intervenções e apoiar a captação de recursos. Seu objetivo é qualificar o planejamento e aumentar a capacidade dos municípios e consórcios de transformar demandas em iniciativas viáveis.", detalhes: ["Elaboração de projetos para captação de recursos", "Estudos de viabilidade técnica", "Elaboração ou revisão de planos municipais e regionais", "Desenvolvimento de planos setoriais integrados"] }
 };
 
 // ==========================================
@@ -184,7 +183,7 @@ const cadeiaValorData = {
     primarias: {
         title: "PROCESSOS FINALÍSTICOS",
         content: `
-		<p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos finalísticos correspondem ao conjunto de atividades por meio das quais o consórcio realiza suas entregas principais para os municípios consorciados e para a população. São os processos diretamente ligados à execução de políticas, obras, serviços e ações que materializam a finalidade pública do consórcio e expressam, de forma mais concreta, sua contribuição para o desenvolvimento do território.</p>
+		<p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos finalísticos correspondem ao conjunto de atividades por meio das quais o consórcio realiza suas entregas principais para os municípios consorciados e para a população. São os processos diretamente ligados à execution de políticas, obras, serviços e ações que materializam a finalidade pública do consórcio e expressam, de forma mais concreta, sua contribuição para o desenvolvimento do território.</p>
             <div class="cv-modern-grid">
                 <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="requalificacao"><div class="cv-modern-icon">${svgIcons.icon_road}</div><div class="cv-modern-title">Requalificação de Vias</div></div>
                 <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="manutencao"><div class="cv-modern-icon">${svgIcons.icon_maintenance}</div><div class="cv-modern-title">Manutenção de Vias</div></div>
@@ -382,14 +381,26 @@ const indicadoresEstrategicosMainContent = `
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
+    initializeHeaderScroll();
     initializeModals();
     initializeSearch(); 
     initializeShare();  
     initializeAccessibility();
 });
 
+function initializeHeaderScroll() {
+    const header = document.getElementById('menu-principal');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('compact');
+        } else {
+            header.classList.remove('compact');
+        }
+    });
+}
+
 function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-moderna a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -440,6 +451,7 @@ function initializeModals() {
             modalTitle.textContent = mvvData[key].title;
             modalBody.innerHTML = btnVoltarGlobal + mvvData[key].content;
             modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
             document.querySelector('.btn-close-modal').focus();
         }
     });
@@ -452,6 +464,7 @@ function initializeModals() {
         modalTitle.textContent = "Perspectivas";
         modalBody.innerHTML = btnVoltarGlobal + pilaresMainContent;
         modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
         document.querySelector('.btn-close-modal').focus();
     }
 
@@ -493,6 +506,7 @@ function initializeModals() {
         modalTitle.textContent = "Cadeia de Valor";
         modalBody.innerHTML = btnVoltarGlobal + cadeiaValorMainContent;
         modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
         document.querySelector('.btn-close-modal').focus();
     }
 
@@ -575,6 +589,7 @@ function initializeModals() {
         modalTitle.textContent = "Indicadores das Atividades Primárias";
         modalBody.innerHTML = btnVoltarGlobal + indicadoresFinalisticosMainContent;
         modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
         document.querySelector('.btn-close-modal').focus();
     }
 
@@ -643,6 +658,7 @@ function initializeModals() {
         modalTitle.textContent = "Indicadores Estratégicos";
         modalBody.innerHTML = btnVoltarGlobal + indicadoresEstrategicosMainContent;
         modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
         document.querySelector('.btn-close-modal').focus();
     }
 
@@ -691,6 +707,7 @@ function initializeModals() {
         // GARANTE QUE A COR DO TÍTULO É RESETADA AO FECHAR NO 'X'
         modalTitle.style.removeProperty('color');
         modalTitle.style.removeProperty('border-bottom-color');
+        document.body.style.overflow = '';
     }
 
     closeBtn.addEventListener('click', closeModal);
