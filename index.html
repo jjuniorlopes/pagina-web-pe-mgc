@@ -15,19 +15,6 @@
     <div class="bg-shape shape-2" aria-hidden="true"></div>
 
     <div class="container relative-z">
-        <nav class="navigation glass-effect" id="menu-principal" tabindex="-1" aria-label="Menu de Navegação Principal">
-            <div class="logos-container">
-				<img src="imagens/logo_consorcios.png" alt="Logo dos Consórcios Multifinálitarios Públicos da Bahia" class="nav-logo">
-            </div>
-            
-            <ul>
-                <li><a href="#alinhamento" class="nav-link">Introdução</a></li>
-                <li><a href="#missao-visao" class="nav-link">Identidade</a></li>
-                <li><a href="#mapa-estrategico" class="nav-link">Mapa Estratégico</a></li>
-                <li><a href="#cadeia-valor" class="nav-link">Cadeia de Valor</a></li>
-                <li><a href="#indicadores" class="nav-link">Indicadores</a></li>
-            </ul>
-        </nav>  
         
         <div class="toolbar-section" aria-label="Barra de Ferramentas e Acessibilidade">
             <div class="search-container">
@@ -62,39 +49,58 @@
                 </button>
             </div>
         </div>
+
+        <header class="modern-cabecalho glass-effect-strong" id="menu-principal">
+            
+            <!-- Linha 1: Ícone e Título Principal com Subtítulo -->
+            <div class="cabecalho-linha-1">
+                <img src="imagens/icon_pe.png" alt="Ícone Planejamento Estratégico" class="icone-pe">
+                <div class="titulos-wrapper">
+                    <h1 class="titulo-principal-pe">PLANEJAMENTO ESTRATÉGICO DE REFERÊNCIA</h1>
+                    <h2 class="subtitulo-pe">CONSÓRCIOS PÚBLICOS MULTIFINALITÁRIOS</h2>
+                </div>
+            </div>
+            
+            <div class="cabecalho-divisor hide-on-compact"></div>
+            
+            <!-- Linha 2: Apoio Técnico e Logos Organizacionais -->
+            <div class="cabecalho-linha-2 hide-on-compact">
+                <span class="apoio-tecnico-label">Apoio Técnico</span>
+                
+                <div class="apoio-tecnico-conteudo">
+                    <img src="imagens/logo_estado_bahia.png" alt="Governo do Estado da Bahia" class="logo-estado">
+                    
+                    <span class="texto-orgao">SECRETARIA DO<br>PLANEJAMENTO</span>
+                    
+                    <span class="marcador-separador" aria-hidden="true"></span>
+                    
+                    <span class="texto-orgao">COORDENAÇÃO DOS<br>CONSÓRCIOS PÚBLICOS</span>
+                    
+                    <span class="marcador-separador" aria-hidden="true"></span>
+                    
+                    <a href="https://www.fecbahia.org.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar o site da FECBAHIA">
+                        <img src="imagens/fecbahia.png" alt="FECBAHIA" class="logo-fec">
+                    </a>
+                </div>
+            </div>
+
+            <div class="cabecalho-divisor"></div>
+            
+            <!-- Linha 3: Navegação -->
+            <nav class="nav-moderna" aria-label="Menu de Navegação Principal">
+                <ul>
+                    <li><a href="#alinhamento">Introdução</a></li>
+                    <li><a href="#missao-visao">Identidade</a></li>
+                    <li><a href="#mapa-estrategico">Mapa Estratégico</a></li>
+                    <li><a href="#cadeia-valor">Cadeia de Valor</a></li>
+                    <li><a href="#indicadores">Indicadores</a></li>
+                </ul>
+            </nav>
+        </header>
         
         <header class="main-banner glass-effect">
             <img src="imagens/banner-principal.jpg" alt="Banner Planejamento Estratégico de Referência" class="banner-image">
         </header>
-		
-     
-        <section class="apoiadores-section">
-
-			<h3 class="apoio-titulo">APOIO TÉCNICO</h3>
-
-		<div class="apoiadores-container">
-
-			<a href="https://www.seplan.ba.gov.br/"
-			target="_blank"
-			rel="noopener noreferrer">
-				<img src="imagens/logo-seplan.png"
-					alt="Secretaria do Planejamento do Estado da Bahia">
-			</a>
-
-			<a href="https://fecbahia.org.br/"
-			target="_blank"
-			rel="noopener noreferrer">
-				<img src="imagens/fecbahia.png"
-					alt="FECBAHIA">
-			</a>
-
-			<img src="imagens/logo-coordenacao.png"
-				alt="Coordenação dos Consórcios Públicos do Estado da Bahia">
-
-		</div>
-
-		</section>
-      
 		
         <main id="conteudo-principal" tabindex="-1">
             <section id="alinhamento" class="section section-clean">
@@ -219,11 +225,8 @@
 
         <footer class="glass-effect mt-30" id="rodape" tabindex="-1">
 			<div class="footer-content">
-				
 				<p>&copy; 2026 Coordenação dos Consórcios Públicos do Estado da Bahia. Todos os direitos reservados.</p>
-
 			</div>
-
 			<p class="footer-version">Acessível - Em conformidade com o e-MAG</p>
 		</footer>
 		
