@@ -311,10 +311,10 @@ const indicadoresEstrategicosData = {
     ave: { title: "Alcance da Visão Estratégica", objetivo: "Tornar-se referência na execução de políticas públicas de forma sustentável.", formula: "Média ponderada dos indicadores estratégicos.", obs: "O indicador consolidado será apurado anualmente para visualizar a convergência em relação à Visão 2028." },
     sef: { title: "Sustentação Econômico-Financeira", objetivo: "Alcançar o equilíbrio econômico-financeiro.", formula: "((Receitas - Despesas Operacionais - Investimentos) / Receitas) x 100", obs: "As despesas operacionais não incluem a depreciação." },
     nsc: { title: "Nível de Satisfação dos Consorciados", objetivo: "Atender às necessidades e expectativas dos consorciados.", formula: "Nota obtida via pesquisa de satisfação.", obs: "A pesquisa será aplicada anualmente com base nos fatores críticos de sucesso." },
-    glct: { title: "Geração Líquida de Caixa Total", objetivo: "Otimizar a relação entre receitas e despesas correntes.", formula: "((Entradas Totais - Saídas Totais) / Entradas Totais) x 100", obs: "As saídas devem incluir os investimentos." },
+    glct: { title: "Geração Líquida de Caixa Total", objetivo: "Otimizar a relação entre receitas e despesas correntes.", formula: "((Entradas Totais - Saídas Totais) / Entradas Totais) x 100", obs: "As saídas devem include os investimentos." },
     eps: { title: "Estruturação do Portifólio de Serviços", objetivo: "Alinhar o portifólio de serviços às demandas dos consorciados.", formula: "(Linhas de ação estruturadas / Linhas de ação deliberadas) x 100", obs: "As linhas de ação deliberadas são demandas formais do Colegiado." },
     cts: { title: "Conformidade Técnica dos Serviços", objetivo: "Elevar a qualidade dos serviços realizados.", formula: "(Serviços em conformidade / Total de serviços realizados) x 100", obs: "A conformidade será aferida por padrões técnicos e pesquisa periódica." },
-    glco: { title: "Geração Líquida de Caixa Operacional", objetivo: "Aumentar a produtividade e eficiência dos processos.", formula: "((Entradas Operacionais - Saídas Operacionais) / Entradas) x 100", obs: "As saídas não devem incluir os investimentos." },
+    glco: { title: "Geração Líquida de Caixa Operacional", objetivo: "Aumentar a produtividade e eficiência dos processos.", formula: "((Entradas Operacionais - Saídas Operacionais) / Entradas) x 100", obs: "As saídas não devem include os investimentos." },
     cpos: { title: "Cumprimento dos Prazos de Obras e Serviços", objetivo: "Garantir a entrega de obras e serviços nos prazos acordados.", formula: "(Serviços no prazo / Total de serviços realizados) x 100", obs: "Consolidação de todos os indicadores de prazos dos processos finalísticos." },
     scr: { title: "Sucesso na Captação de Recursos", objetivo: "Sistematizar a captação de recursos nacionais e internacionais.", formula: "(Projetos aprovados / Total de projetos encaminhados) x 100", obs: "Serão computados os projetos com resultado de aprovação colhido dentro do exercício." },
     edo: { title: "Estruturação do Desenho Organizacional", objetivo: "Adequar a estrutura organizacional às demandas estratégicas.", formula: "(Componentes estruturados / Componentes previstos) x 100", obs: "Os componentes estão relacionados às etapas de estruturação organizacional." },
@@ -391,7 +391,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeHeaderScroll() {
     const header = document.getElementById('menu-principal');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        // Incrementado para evitar flicker
+        if (window.scrollY > 150) {
             header.classList.add('compact');
         } else {
             header.classList.remove('compact');
@@ -823,7 +824,7 @@ function initializeModals() {
 // LÓGICA DE COMPARTILHAMENTO SOCIAL E INSTAGRAM
 // ==========================================
 function initializeShare() {
-    const shareButtons = document.querySelectorAll('.share-btn');
+    const shareButtons = document.querySelectorAll('.share-btn, .share-btn-util');
     
     shareButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -856,14 +857,16 @@ function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
     const searchableCards = document.querySelectorAll('.cv-modern-card, .mvv-modern-card, .pilar');
 
-    searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase().trim();
-        searchableCards.forEach(card => {
-            const text = card.textContent.toLowerCase();
-            if (text.includes(searchTerm)) card.style.display = ''; 
-            else card.style.display = 'none';
+    if(searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            searchableCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) card.style.display = ''; 
+                else card.style.display = 'none';
+            });
         });
-    });
+    }
 }
 
 // ==========================================
@@ -873,27 +876,34 @@ function initializeAccessibility() {
     let currentFontSize = 100;
     const htmlElement = document.documentElement;
 
-    document.getElementById('btn-font-increase').addEventListener('click', () => {
-        if (currentFontSize < 150) { 
-            currentFontSize += 10;
-            htmlElement.style.fontSize = currentFontSize + '%';
-        }
+    document.querySelectorAll('#btn-font-increase').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (currentFontSize < 150) { 
+                currentFontSize += 10;
+                htmlElement.style.fontSize = currentFontSize + '%';
+            }
+        });
     });
 
-    document.getElementById('btn-font-decrease').addEventListener('click', () => {
-        if (currentFontSize > 80) { 
-            currentFontSize -= 10;
-            htmlElement.style.fontSize = currentFontSize + '%';
-        }
+    document.querySelectorAll('#btn-font-decrease').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (currentFontSize > 80) { 
+                currentFontSize -= 10;
+                htmlElement.style.fontSize = currentFontSize + '%';
+            }
+        });
     });
 
-    document.getElementById('btn-font-normal').addEventListener('click', () => {
-        currentFontSize = 100;
-        htmlElement.style.fontSize = '100%';
+    document.querySelectorAll('#btn-font-normal').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentFontSize = 100;
+            htmlElement.style.fontSize = '100%';
+        });
     });
 
-    const btnContrast = document.getElementById('btn-contrast');
-    btnContrast.addEventListener('click', toggleContrast);
+    document.querySelectorAll('#btn-contrast').forEach(btnContrast => {
+        btnContrast.addEventListener('click', toggleContrast);
+    });
 
     function toggleContrast() {
         document.body.classList.toggle('alto-contraste');
