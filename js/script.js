@@ -67,7 +67,7 @@ const objetivosData = {
     qualidade: { title: "Elevar a qualidade dos serviços realizados", description: "Trata-se de melhorar o padrão de entrega dos serviços executados pelo consórcio, buscando maior conformidade técnica, maior confiabilidade e melhores resultados para os municípios consorciados. O objetivo pressupõe atenção tanto à qualidade percebida quanto à qualidade efetivamente entregue." },
     produtividade: { title: "Aumentar a produtividade e eficiência dos processos", description: "Esse objetivo procura fazer com que o consórcio produza mais e melhor com os recursos disponíveis. O foco está em eliminar desperdícios, reduzir retrabalho, melhorar fluxos de trabalho e tornar a execução mais ágil, econômica e confiável." },
     captacao: { title: "Sistematizar a captação de recursos nacionais e internacionais", description: "Esse objetivo busca estruturar a captação de recursos como uma atividade permanente e planejada, e não apenas ocasional. A ideia é desenvolver capacidade institucional para identificar oportunidades, elaborar propostas, articular parcerias e ampliar o acesso a fontes externas de financiamento." },
-    equilibrio: { title: "Alcançar o equilíbrio econômico-financeiro", description: "Esse objetivo busca assegurar a sustentabilidade global do consórcio no tempo, de modo que ele tenha condições de manter suas atividades, honrar compromissos e continuar se desenvolvendo. Envolve equilíbrio entre receitas, despesas e investimentos, com responsabilidade fiscal e capacidade de planejamento financeiro." },
+    equilibrio: { title: "Alcançar o equilíbrio econômico-financeiro", description: "Esse objetivo busca assegurar a sustentabilidade global do consórcio no tempo, de modo que ele tenha condições de manter suas atividades, honrar compromissos e continue se desenvolvendo. Envolve equilíbrio entre receitas, despesas e investimentos, com responsabilidade fiscal e capacidade de planejamento financeiro." },
     necessidades: { title: "Atender às necessidades e expectativas dos consorciados", description: "Esse objetivo expressa o compromisso do consórcio com a satisfação dos municípios que dele participam. Mais do que prestar serviços, trata-se de entregar soluções úteis, relevantes e percebidas como valiosas pelos consorciados, considerando suas necessidades, prioridades e expectativas em relação à atuação consorcial." }
 };
 
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeHeaderScroll() {
-    const header = document.getElementById('menu-principal');
+    const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
         // Incrementado para evitar flicker
         if (window.scrollY > 150) {
@@ -401,7 +401,7 @@ function initializeHeaderScroll() {
 }
 
 function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link, .nav-moderna a');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-moderna a, .nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -824,7 +824,7 @@ function initializeModals() {
 // LÓGICA DE COMPARTILHAMENTO SOCIAL E INSTAGRAM
 // ==========================================
 function initializeShare() {
-    const shareButtons = document.querySelectorAll('.share-btn, .share-btn-util');
+    const shareButtons = document.querySelectorAll('.share-btn-util');
     
     shareButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -833,10 +833,7 @@ function initializeShare() {
             const title = encodeURIComponent(document.title || "Planejamento Estratégico Consórcios");
 
             if (platform === 'instagram') window.open(`https://www.instagram.com/coordconsorcio.bahia/`, '_blank');
-            if (platform === 'facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-            if (platform === 'x') window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
             if (platform === 'whatsapp') window.open(`https://api.whatsapp.com/send?text=${title}%20-%20${url}`, '_blank');
-            if (platform === 'linkedin') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
             if (platform === 'email') window.open(`mailto:?subject=${title}&body=Confira este link:%20${url}`);
             if (platform === 'print') window.print();
             if (platform === 'copy') {
@@ -851,21 +848,87 @@ function initializeShare() {
 }
 
 // ==========================================
-// LÓGICA DA BARRA DE PESQUISA (Filtro na Tela)
+// LÓGICA DE BUSCA INTERNA NA PÁGINA COM SCROLL
 // ==========================================
 function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
-    const searchableCards = document.querySelectorAll('.cv-modern-card, .mvv-modern-card, .pilar');
+    const searchBtn = document.getElementById('btn-executar-busca');
 
-    if(searchInput) {
-        searchInput.addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase().trim();
-            searchableCards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                if (text.includes(searchTerm)) card.style.display = ''; 
-                else card.style.display = 'none';
-            });
+    function performSearch() {
+        const term = searchInput.value.trim();
+        
+        // Remove os destaques anteriores restaurando o texto
+        const highlights = document.querySelectorAll('.search-highlight');
+        highlights.forEach(h => {
+            const parent = h.parentNode;
+            parent.replaceChild(document.createTextNode(h.textContent), h);
+            parent.normalize();
         });
+
+        if (term.length < 3) {
+            if(term.length > 0) alert('Digite pelo menos 3 caracteres para pesquisar.');
+            return;
+        }
+
+        const content = document.getElementById('conteudo-principal');
+        let firstMatch = null;
+
+        // Função recursiva para percorrer apenas os "text nodes" e aplicar o <span class="search-highlight">
+        function traverse(node) {
+            if (node.nodeType === 3) {
+                const text = node.nodeValue;
+                const matchIndex = text.toLowerCase().indexOf(term.toLowerCase());
+                if (matchIndex !== -1) {
+                    const span = document.createElement('span');
+                    span.className = 'search-highlight';
+                    
+                    const matchedText = text.substring(matchIndex, matchIndex + term.length);
+                    span.textContent = matchedText;
+
+                    const after = node.splitText(matchIndex);
+                    after.nodeValue = after.nodeValue.substring(term.length);
+                    node.parentNode.insertBefore(span, after);
+                    
+                    if(!firstMatch) firstMatch = span;
+                    return true;
+                }
+            } else if (node.nodeType === 1 && node.childNodes && !/(script|style)/i.test(node.tagName) && node.className !== 'search-highlight') {
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    if (traverse(node.childNodes[i])) {
+                        i++; // Pula o span recém-criado
+                    }
+                }
+            }
+            return false;
+        }
+
+        traverse(content);
+
+        if (firstMatch) {
+            // Calcula o deslocamento considerando os dois cabeçalhos fixos (Topbar + Main Header)
+            const headerOffset = document.getElementById('main-header').offsetHeight + 50; 
+            const elementPosition = firstMatch.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            alert('Nenhum resultado encontrado para "' + term + '" na página principal.');
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+    }
+    if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
     }
 }
 
