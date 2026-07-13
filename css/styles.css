@@ -16,7 +16,7 @@ body {
     color: var(--text-color);
     background-color: #ffffff;
     min-height: 100vh;
-    padding: 20px;
+    padding: 0;
     position: relative;
     overflow-x: hidden;
 }
@@ -26,7 +26,7 @@ body {
 .shape-1 { width: 400px; height: 400px; background: rgba(27, 98, 184, 0.15); top: -100px; left: -100px; }
 .shape-2 { width: 500px; height: 500px; background: rgba(255, 87, 51, 0.1); bottom: -150px; right: -100px; }
 
-.container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; outline: none; }
+.container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; outline: none; padding: 20px;}
 .mt-30 { margin-top: 30px; }
 .text-sm { font-size: 0.9rem; color: #555; margin-top: 10px; }
 
@@ -36,40 +36,44 @@ body {
 
 
 /* ==========================================
-   FAIXA DE UTILIDADES (TOPO ABSOLUTO)
+   NOVA BARRA SUPERIOR AZUL (TOPBAR)
 ========================================== */
-.faixa-utilidades-topo {
+.topbar-azul {
     background-color: var(--primary-color);
     color: #ffffff;
-    padding: 8px 15px;
+    padding: 8px 20px;
     display: flex;
     justify-content: center;
     border-radius: 15px 15px 0 0;
-    margin-bottom: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.utilidades-container {
+.topbar-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 15px;
+    justify-content: center; 
     width: 100%;
-    max-width: 1100px;
+    max-width: 1150px;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
-.utilidades-acessibilidade {
+.topbar-group {
     display: flex;
     align-items: center;
-    gap: 8px;
 }
+
+.topbar-left { gap: 8px; }
+.topbar-center { flex-grow: 1; max-width: 450px; justify-content: center; }
+.topbar-right { gap: 12px; }
 
 .acessibilidade-texto {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
+    margin-right: 8px;
+    color: #ffffff;
 }
 
 .access-btn-util {
@@ -78,7 +82,7 @@ body {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     cursor: pointer;
     padding: 2px 4px;
     display: flex;
@@ -87,34 +91,46 @@ body {
     transition: transform 0.2s ease;
 }
 
-.access-btn-util:hover {
-    transform: scale(1.1);
-}
+.access-btn-util:hover { transform: scale(1.1); }
+.contrast-icon { margin-left: 5px; }
 
-.utilidades-separador {
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 300;
+.topbar-pipe {
+    color: rgba(255, 255, 255, 0.4);
     font-size: 1.2rem;
     user-select: none;
+    margin: 0 10px;
 }
 
-.search-container-util {
+/* Caixa de Busca Modernizada na Topbar */
+.search-box-modern {
     display: flex;
     align-items: center;
     background-color: #ffffff;
     border-radius: 4px;
-    padding: 4px 10px;
-    min-width: 250px;
+    padding: 5px 12px;
+    width: 100%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.search-icon-util {
-    width: 16px;
-    height: 16px;
+.search-box-modern:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(255, 87, 51, 0.4);
+}
+
+.search-btn-icon {
+    background: transparent;
+    border: none;
     color: var(--primary-color);
-    margin-right: 6px;
+    cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
 }
 
-.search-container-util input {
+.search-btn-icon svg { width: 16px; height: 16px; }
+
+.search-box-modern input {
     border: none;
     outline: none;
     background: transparent;
@@ -125,14 +141,8 @@ body {
     width: 100%;
 }
 
-.search-container-util input::placeholder {
-    color: rgba(27, 98, 184, 0.7);
-}
-
-.social-share-container-util {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.search-box-modern input::placeholder {
+    color: rgba(27, 98, 184, 0.6);
 }
 
 .share-btn-util {
@@ -146,32 +156,42 @@ body {
     transition: transform 0.2s ease;
 }
 
-.share-btn-util svg {
-    width: 18px;
-    height: 18px;
-}
+.share-btn-util svg { width: 18px; height: 18px; }
+.share-btn-util:hover { transform: scale(1.1); }
 
-.share-btn-util:hover {
-    transform: scale(1.1);
+/* Destaque nativo gerado pelo JS na busca in-page */
+.search-highlight {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(255, 87, 51, 0.5);
 }
 
 
 /* ==========================================
-   NOVO CABEÇALHO MODERNO & MINIMIZÁVEL
+   CABEÇALHO PRINCIPAL FIXO E COM COMPACTAÇÃO
 ========================================== */
-.modern-cabecalho {
+.main-header {
     position: sticky;
     top: 0;
     z-index: 100;
     margin-bottom: 30px;
-    margin-top: 0;
     padding: 20px 30px 10px 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    background: rgba(255, 255, 255, 0.95);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Transições para o Modo Compacto (Scroll) */
+.main-header.compact {
+    padding: 10px 30px 5px 30px;
+    gap: 10px;
 }
 
 .hide-on-compact {
@@ -181,15 +201,7 @@ body {
     overflow: hidden;
 }
 
-.modern-cabecalho.compact {
-    padding: 10px 20px 5px 20px;
-    gap: 10px;
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.modern-cabecalho.compact .hide-on-compact {
+.main-header.compact .hide-on-compact {
     max-height: 0;
     opacity: 0;
     margin: 0;
@@ -198,25 +210,25 @@ body {
     border: none;
 }
 
-/* Linha 1: Título e Ícone */
-.cabecalho-linha-1 {
+/* Linha 1: Ícone e Títulos */
+.header-row-1 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
 
-.icone-pe {
+.header-icon {
     height: 45px;
     width: auto;
     transition: height 0.4s ease;
 }
 
-.modern-cabecalho.compact .icone-pe {
+.main-header.compact .header-icon {
     height: 32px;
 }
 
-.titulos-wrapper {
+.header-titles {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,52 +241,55 @@ body {
     font-weight: 800 !important;
     font-size: 1.6rem !important;
     margin: 0 !important;
-    border: none !important;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding: 0 !important;
-    transition: font-size 0.4s ease;
+    text-align: center;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    transition: font-size 0.4s ease !important;
 }
 
-.modern-cabecalho.compact .titulo-principal-pe {
+.main-header.compact .titulo-principal-pe {
     font-size: 1.2rem !important;
 }
 
 .subtitulo-pe {
     font-family: 'Montserrat', sans-serif !important;
-    color: #bd7b13 !important; 
+    color: #e67e22 !important; /* Laranja Abóbora restaurado */
     font-weight: 700 !important;
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     margin: 2px 0 0 0 !important;
-    border: none !important;
     letter-spacing: 0.5px;
-    text-align: center !important;
     text-transform: uppercase;
-    transition: font-size 0.4s ease;
-    padding: 0 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    transition: font-size 0.4s ease !important;
 }
 
-.modern-cabecalho.compact .subtitulo-pe {
-    font-size: 0.8rem !important;
+.main-header.compact .subtitulo-pe {
+    font-size: 0.75rem !important;
 }
+
 
 /* Divisores do Cabeçalho */
-.cabecalho-divisor {
+.header-divider {
     width: 100%;
     height: 1px;
+    border: none;
     background-color: rgba(27, 98, 184, 0.15); 
-    margin: 0 auto;
+    margin: 0;
 }
 
 /* Linha 2: Apoio Técnico */
-.cabecalho-linha-2 {
+.header-row-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
-.apoio-tecnico-label {
+.apoio-titulo-small {
     font-size: 0.75rem;
     font-weight: 700;
     color: #777;
@@ -282,16 +297,17 @@ body {
     letter-spacing: 1px;
 }
 
-.apoio-tecnico-conteudo {
+.apoio-logos-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    gap: 20px;
+    flex-wrap: wrap; /* Resolve o corte em telas pequenas */
+    width: 100%;
 }
 
-.logo-estado, .logo-fec {
-    height: 55px;
+.logo-gov, .logo-fec {
+    height: 50px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -300,33 +316,28 @@ body {
     transform: scale(1.05);
 }
 
-.texto-orgao {
+.logo-text {
     font-family: 'Montserrat', sans-serif;
-    color: #0c2340; 
+    color: #0c2340; /* Azul escuro exigido */
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     line-height: 1.2;
     text-align: left;
 }
 
-.marcador-separador {
-    width: 1px;
-    height: 40px;
-    background-color: var(--primary-color);
+.logo-pipe {
+    color: var(--primary-color);
     opacity: 0.3;
+    font-size: 1.5rem;
+    user-select: none;
 }
 
 /* Linha 3: Navegação */
-.nav-moderna {
+.header-row-3 {
     width: 100%;
-    transition: padding 0.4s ease;
 }
 
-.modern-cabecalho.compact .nav-moderna {
-    padding-top: 5px;
-}
-
-.nav-moderna ul {
+.nav-links ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -336,11 +347,7 @@ body {
     flex-wrap: wrap;
 }
 
-.modern-cabecalho.compact .nav-moderna ul {
-    gap: 20px;
-}
-
-.nav-moderna a {
+.nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 700;
@@ -350,7 +357,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-moderna a::after {
+.nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -362,13 +369,14 @@ body {
     border-radius: 2px;
 }
 
-.nav-moderna a:hover, .nav-moderna a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--primary-color);
 }
 
-.nav-moderna a:hover::after, .nav-moderna a.active::after {
+.nav-links a:hover::after, .nav-links a.active::after {
     width: 100%;
 }
+
 
 /* ==========================================
    SEÇÕES GERAIS E PARA-CHOQUE (SCROLL OFFSET)
@@ -380,7 +388,8 @@ header.main-banner { padding: 0; overflow: hidden; margin-bottom: 30px; display:
     padding: 40px; 
     margin-bottom: 30px; 
     transition: transform 0.3s ease; 
-    scroll-margin-top: 140px; 
+    /* Offset do scroll MÁXIMO para não colidir com header principal */
+    scroll-margin-top: 220px; 
 }
 
 p { font-size: 1.1rem; margin-bottom: 15px; text-align: center; }
@@ -413,16 +422,7 @@ h2, .modal-title-custom { border-bottom: 3px solid var(--accent-color) !importan
 
 /* Modal Styles */
 .glass-modal-overlay { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); backdrop-filter: blur(5px); justify-content: center; align-items: center; }
-.modal-content { 
-    width: 90%; 
-    max-width: 800px; 
-    padding: 30px; 
-    position: relative; 
-    max-height: 90vh; 
-    overflow-y: auto; 
-    -webkit-overflow-scrolling: touch; 
-    animation: modalFadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-}
+.modal-content { width: 90%; max-width: 800px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; animation: modalFadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
 @keyframes modalFadeIn { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
 .close { position: absolute; top: 20px; right: 25px; font-size: 28px; font-weight: bold; color: #aaa; cursor: pointer; transition: 0.2s; background: none; border: none;}
 .close:hover { color: var(--accent-color); }
@@ -521,24 +521,19 @@ footer { text-align: center; padding: 30px; outline: none; }
    ACESSIBILIDADE: ALTO CONTRASTE (Alt+6)
 ========================================== */
 body.alto-contraste, body.alto-contraste main, body.alto-contraste .section-clean { background-color: #000000 !important; color: #ffffff !important; background-image: none !important; }
-body.alto-contraste .glass-effect, body.alto-contraste .glass-effect-strong, body.alto-contraste .glass-card, body.alto-contraste .cv-modern-card, body.alto-contraste .mvv-modern-card, body.alto-contraste .pilar, body.alto-contraste .modal-content, body.alto-contraste .topbar, body.alto-contraste .modern-cabecalho, body.alto-contraste footer { background: #121212 !important; border: 2px solid #ffff00 !important; color: #ffffff !important; box-shadow: none !important; backdrop-filter: none !important; }
-body.alto-contraste h1, body.alto-contraste h2, body.alto-contraste h3, body.alto-contraste h4, body.alto-contraste .title-alinhamento, body.alto-contraste .modal-title-custom, body.alto-contraste .nav-moderna a, body.alto-contraste .cv-modern-title, body.alto-contraste .mvv-text, body.alto-contraste .mvv-footer { color: #ffff00 !important; }
+body.alto-contraste .glass-effect, body.alto-contraste .glass-effect-strong, body.alto-contraste .glass-card, body.alto-contraste .cv-modern-card, body.alto-contraste .mvv-modern-card, body.alto-contraste .pilar, body.alto-contraste .modal-content, body.alto-contraste .main-header, body.alto-contraste footer { background: #121212 !important; border: 2px solid #ffff00 !important; color: #ffffff !important; box-shadow: none !important; backdrop-filter: none !important; }
+body.alto-contraste h1, body.alto-contraste h2, body.alto-contraste h3, body.alto-contraste h4, body.alto-contraste .title-alinhamento, body.alto-contraste .modal-title-custom, body.alto-contraste .nav-links a, body.alto-contraste .cv-modern-title, body.alto-contraste .mvv-text, body.alto-contraste .mvv-footer { color: #ffff00 !important; }
 body.alto-contraste p, body.alto-contraste span, body.alto-contraste li, body.alto-contraste td, body.alto-contraste th { color: #ffffff !important; }
 body.alto-contraste svg { fill: #ffff00 !important; color: #ffff00 !important; stroke: #ffff00 !important; }
 
-/* Alto Contraste: Utilidades */
+/* Alto Contraste para Topbar e Cabeçalho Fixos */
 body.alto-contraste .faixa-utilidades-topo { background: #000000 !important; border-bottom: 2px solid #ffff00; }
-body.alto-contraste .acessibilidade-texto, body.alto-contraste .access-btn-util, body.alto-contraste .utilidades-separador { color: #ffff00 !important; }
-body.alto-contraste .search-container-util { background: #000 !important; border: 1px solid #ffff00 !important; }
-body.alto-contraste .search-icon-util, body.alto-contraste .search-container-util input, body.alto-contraste .search-container-util input::placeholder, body.alto-contraste .share-btn-util { color: #ffff00 !important; }
-
-body.alto-contraste .access-btn, body.alto-contraste .share-btn, body.alto-contraste .objetivo-btn, body.alto-contraste .pagination-btn, body.alto-contraste .btn-voltar-moderno { background: #000000 !important; color: #ffff00 !important; border: 2px solid #ffff00 !important; }
-body.alto-contraste .access-btn:hover, body.alto-contraste .share-btn:hover, body.alto-contraste .objetivo-btn:hover { background: #ffff00 !important; color: #000000 !important; }
-body.alto-contraste .solid-blue-box { background: #000 !important; border: 2px solid #ff0 !important;}
-
+body.alto-contraste .acessibilidade-texto, body.alto-contraste .access-btn-util, body.alto-contraste .topbar-pipe { color: #ffff00 !important; }
+body.alto-contraste .search-box-modern { background: #000 !important; border: 1px solid #ffff00 !important; }
+body.alto-contraste .search-btn-icon, body.alto-contraste .search-box-modern input, body.alto-contraste .search-box-modern input::placeholder, body.alto-contraste .share-btn-util { color: #ffff00 !important; }
 body.alto-contraste .titulo-principal-pe, body.alto-contraste .texto-orgao { color: #ffff00 !important; }
 body.alto-contraste .subtitulo-pe { color: #ffff00 !important; }
-body.alto-contraste .marcador-separador, body.alto-contraste .cabecalho-divisor { background-color: #ffff00 !important; opacity: 1; }
+body.alto-contraste .logo-pipe, body.alto-contraste .header-divider { background-color: #ffff00 !important; opacity: 1; color: #ffff00 !important; }
 
 /* ==========================================
    MEDIA QUERIES (RESPONSIVIDADE AVANÇADA)
@@ -546,17 +541,19 @@ body.alto-contraste .marcador-separador, body.alto-contraste .cabecalho-divisor 
 @media (max-width: 1024px) {
     .align-grid { gap: 25px; }
     .pilares-grid, .cv-modern-grid, .indicadores-grid { grid-template-columns: repeat(2, 1fr); }
+    .topbar-container { justify-content: center; }
 }
 
 @media (max-width: 768px) {
     /* Responsividade Faixa Utilidades */
-    .faixa-utilidades-topo { border-radius: 8px; margin-bottom: 10px; }
-    .utilidades-container { justify-content: center; gap: 10px; }
-    .utilidades-separador { display: none; } /* Ocultar os pipes no mobile */
-    .search-container-util { min-width: 100%; }
+    .faixa-utilidades-topo { border-radius: 8px; margin-bottom: 10px; padding: 15px; }
+    .utilidades-container { flex-direction: column; gap: 15px; }
+    .topbar-pipe { display: none; } 
+    .topbar-center { width: 100%; max-width: 100%; padding: 0; }
+    .search-box-modern { max-width: 100%; }
 
-    /* Responsividade do Novo Cabeçalho */
-    .cabecalho-linha-1 { flex-direction: column; text-align: center; }
+    /* Responsividade Main Header */
+    .header-row-1 { flex-direction: column; text-align: center; }
     .titulo-principal-pe { font-size: 1.3rem !important; }
     .subtitulo-pe { font-size: 0.9rem !important; }
     
@@ -567,44 +564,25 @@ body.alto-contraste .marcador-separador, body.alto-contraste .cabecalho-divisor 
         gap: 12px;
     }
     
-    .marcador-separador { 
-        display: none; 
-    } 
+    .marcador-separador { display: none; } 
+    .texto-orgao { text-align: center; font-size: 0.75rem; flex-basis: auto; }
+    .logo-estado, .logo-fec { height: 35px; }
     
-    .texto-orgao { 
-        text-align: center; 
-        font-size: 0.75rem; 
-        flex-basis: auto;
-    }
-    
-    .logo-estado, .logo-fec { 
-        height: 35px; 
-    }
+    .nav-links ul { gap: 15px; }
+    .nav-links a { font-size: 0.95rem; }
 
-    /* Modais Mobile Aprimorados */
-    .modal-content {
-        width: 95%;
-        max-height: 85vh; 
-        padding: 20px 15px 30px; 
-        border-radius: 12px;
-    }
-    .cv-modern-grid { grid-template-columns: 1fr; gap: 15px; } 
-    .objetivo-btn { font-size: 0.8rem; padding: 12px 15px; }
+    .modal-content { width: 95%; padding: 20px 15px; }
+    .close { right: 15px; top: 15px; }
+    .modal-table th, .modal-table td { font-size: 0.9rem; padding: 10px; }
+    .texto-voltar { font-size: 0.95rem; }
     
-    .nav-moderna ul { gap: 15px; }
-    .nav-moderna a { font-size: 0.95rem; }
     .section, .section-clean { padding: 25px 15px; }
-    
     h2, .title-alinhamento { font-size: 1.6rem !important; }
     .modal-title-custom { font-size: 1.3rem !important; padding-right: 30px !important; }
-    
     .text-content-clean .lead-text { font-size: 1.15rem; }
     .align-grid { grid-template-columns: 1fr; } 
     .iniciativas-modern-grid, .indicadores-grid, .pilares-grid { grid-template-columns: 1fr; }
     .solid-blue-box { padding: 20px 15px; }
     .solid-blue-box h3 { font-size: 1.4rem; }
     .mvv-modern-card { width: 100%; max-width: 340px; }
-    .close { right: 15px; top: 15px; }
-    .modal-table th, .modal-table td { font-size: 0.9rem; padding: 10px; }
-    .texto-voltar { font-size: 0.95rem; }
 }
