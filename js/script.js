@@ -42,7 +42,7 @@ const acessibilidadeData = {
                 <h4 style="color: #e67e22; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; text-align: left;">
                     Acesso para Todos
                 </h4>
-                <p style="font-size: 1.05rem; margin-bottom: 0; text-align: left;">Os sites do Governo foram desenvolvidos para garantir acesso a todos os cidadãos, considerando diferentes perfis, contextos e necessidades, com atenção especial às pessoas com deficiência.</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0; text-align: left;">O site foi desenvolvido para garantir acesso a todos os cidadãos, considerando diferentes perfis, contextos e necessidades, com atenção especial às pessoas com deficiência.</p>
             </div>
             
             <h4 style="color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; text-align: left;">Visualização</h4>
