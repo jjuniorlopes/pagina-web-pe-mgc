@@ -32,6 +32,42 @@ const svgIcons = {
 };
 
 // ==========================================
+// DADOS: Modal de Acessibilidade
+// ==========================================
+const acessibilidadeData = {
+    title: "Acessibilidade",
+    content: `
+        <div style="text-align: left;">
+            <div style="background: #fdf3ea; border-left: 4px solid #e67e22; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <h4 style="color: #e67e22; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; text-align: left;">
+                    Acesso para Todos
+                </h4>
+                <p style="font-size: 1.05rem; margin-bottom: 0; text-align: left;">Os sites do Governo foram desenvolvidos para garantir acesso a todos os cidadãos, considerando diferentes perfis, contextos e necessidades, com atenção especial às pessoas com deficiência.</p>
+            </div>
+            
+            <h4 style="color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; text-align: left;">Visualização</h4>
+            <div class="table-responsive" style="margin-bottom: 20px;">
+                <table class="modal-table" style="text-align: left;">
+                    <thead><tr><th style="text-align: left;">Botão</th><th style="text-align: left;">Função</th></tr></thead>
+                    <tbody>
+                        <tr><td style="font-weight: bold; text-align: left;">A+</td><td style="text-align: left;">Aumenta o tamanho dos textos do Portal.</td></tr>
+                        <tr><td style="font-weight: bold; text-align: left;">A-</td><td style="text-align: left;">Diminui o tamanho dos textos do Portal.</td></tr>
+                        <tr><td style="font-weight: bold; text-align: left;">A</td><td style="text-align: left;">Redimensiona os textos para o tamanho original.</td></tr>
+                        <tr><td style="font-weight: bold; display: flex; align-items: center; gap: 5px; text-align: left;"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18v-8-8a8 8 0 1 1 0 16z"/></svg> Alto contraste</td><td style="text-align: left;">Aumenta o contraste entre as cores de texto e fundo.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 style="color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; text-align: left;">VLibras</h4>
+            <p style="font-size: 1.05rem; margin-bottom: 20px; text-align: left;">O VLibras é uma ferramenta gratuita e de código aberto que traduz conteúdos digitais (texto, áudio e vídeo) em Português para Libras, tornando computadores, celulares e plataformas Web mais acessíveis para as pessoas surdas.</p>
+
+            <h4 style="color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; text-align: left;">Leitores de tela</h4>
+            <p style="font-size: 1.05rem; margin-bottom: 0; text-align: left;">Os sites foram desenvolvidos para serem compatíveis com softwares leitores de tela. Com isso, basta que o usuário tenha instalado em seu computador um software compatível (Google Chrome, Firefox, Edge) para ouvir o que está escrito no site.</p>
+        </div>
+    `
+};
+
+// ==========================================
 // DADOS: Missão, Visão e Valores
 // ==========================================
 const mvvData = {
@@ -115,7 +151,6 @@ const pilaresMainContent = `
     </div>
 `;
 
-
 // ==========================================
 // DADOS: Iniciativas Detalhadas (Processos Finalísticos)
 // ==========================================
@@ -183,7 +218,7 @@ const cadeiaValorData = {
     primarias: {
         title: "PROCESSOS FINALÍSTICOS",
         content: `
-		<p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos finalísticos correspondem ao conjunto de atividades por meio das quais o consórcio realiza suas entregas principais para os municípios consorciados e para a população. São os processos diretamente ligados à execution de políticas, obras, serviços e ações que materializam a finalidade pública do consórcio e expressam, de forma mais concreta, sua contribuição para o desenvolvimento do território.</p>
+		<p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos finalísticos correspondem ao conjunto de atividades por meio das quais o consórcio realiza suas entregas principais para os municípios consorciados e para a população. São os processos diretamente ligados à execução de políticas, obras, serviços e ações que materializam a finalidade pública do consórcio e expressam, de forma mais concreta, sua contribuição para o desenvolvimento do território.</p>
             <div class="cv-modern-grid">
                 <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="requalificacao"><div class="cv-modern-icon">${svgIcons.icon_road}</div><div class="cv-modern-title">Requalificação de Vias</div></div>
                 <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="manutencao"><div class="cv-modern-icon">${svgIcons.icon_maintenance}</div><div class="cv-modern-title">Manutenção de Vias</div></div>
@@ -204,9 +239,9 @@ const cadeiaValorData = {
         title: "BENEFICIÁRIOS",
         content: `
             <div class="cv-modern-grid">
-                <div class="cv-modern-card cv-card-trigger" tabindex="0"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Municípios Consorciados</div></div>
-                <div class="cv-modern-card cv-card-trigger" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Sociedade</div></div>
-                <div class="cv-modern-card cv-card-trigger" tabindex="0"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Governo do Estado</div></div>
+                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Municípios Consorciados</div></div>
+                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Sociedade</div></div>
+                <div class="cv-modern-card" tabindex="0"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Governo do Estado</div></div>
             </div>`
     }
 };
@@ -312,9 +347,9 @@ const indicadoresEstrategicosData = {
     sef: { title: "Sustentação Econômico-Financeira", objetivo: "Alcançar o equilíbrio econômico-financeiro.", formula: "((Receitas - Despesas Operacionais - Investimentos) / Receitas) x 100", obs: "As despesas operacionais não incluem a depreciação." },
     nsc: { title: "Nível de Satisfação dos Consorciados", objetivo: "Atender às necessidades e expectativas dos consorciados.", formula: "Nota obtida via pesquisa de satisfação.", obs: "A pesquisa será aplicada anualmente com base nos fatores críticos de sucesso." },
     glct: { title: "Geração Líquida de Caixa Total", objetivo: "Otimizar a relação entre receitas e despesas correntes.", formula: "((Entradas Totais - Saídas Totais) / Entradas Totais) x 100", obs: "As saídas devem include os investimentos." },
-    eps: { title: "Estruturação do Portifólio de Serviços", objetivo: "Alinhar o portifólio de serviços às demandas dos consorciados.", formula: "(Linhas de ação estruturadas / Linhas de ação deliberadas) x 100", obs: "As linhas de ação deliberadas são demandas formais do Colegiado." },
+    eps: { title: "Estruturação do Portifólio de Serviços", objetivo: "Alinhar o portifólio de Serviços às demandas dos consorciados.", formula: "(Linhas de ação estruturadas / Linhas de ação deliberadas) x 100", obs: "As linhas de ação deliberadas são demandas formais do Colegiado." },
     cts: { title: "Conformidade Técnica dos Serviços", objetivo: "Elevar a qualidade dos serviços realizados.", formula: "(Serviços em conformidade / Total de serviços realizados) x 100", obs: "A conformidade será aferida por padrões técnicos e pesquisa periódica." },
-    glco: { title: "Geração Líquida de Caixa Operacional", objetivo: "Aumentar a produtividade e eficiência dos processos.", formula: "((Entradas Operacionais - Saídas Operacionais) / Entradas) x 100", obs: "As saídas não devem include os investimentos." },
+    glco: { title: "Geração Líquida de Caixa Operacional", objetivo: "Aumentar a productivity e eficiência dos processos.", formula: "((Entradas Operacionais - Saídas Operacionais) / Entradas) x 100", obs: "As saídas não devem include os investimentos." },
     cpos: { title: "Cumprimento dos Prazos de Obras e Serviços", objetivo: "Garantir a entrega de obras e serviços nos prazos acordados.", formula: "(Serviços no prazo / Total de serviços realizados) x 100", obs: "Consolidação de todos os indicadores de prazos dos processos finalísticos." },
     scr: { title: "Sucesso na Captação de Recursos", objetivo: "Sistematizar a captação de recursos nacionais e internacionais.", formula: "(Projetos aprovados / Total de projetos encaminhados) x 100", obs: "Serão computados os projetos com resultado de aprovação colhido dentro do exercício." },
     edo: { title: "Estruturação do Desenho Organizacional", objetivo: "Adequar a estrutura organizacional às demandas estratégicas.", formula: "(Componentes estruturados / Componentes previstos) x 100", obs: "Os componentes estão relacionados às etapas de estruturação organizacional." },
@@ -381,9 +416,9 @@ const indicadoresEstrategicosMainContent = `
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
-    initializeHeaderScroll();
-    initializeModals();
+    initializeHeaderScroll(); 
     initializeSearch(); 
+    initializeModals();
     initializeShare();  
     initializeAccessibility();
 });
@@ -391,8 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeHeaderScroll() {
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-        // Incrementado para evitar flicker
-        if (window.scrollY > 150) {
+        if (window.scrollY > 100) {
             header.classList.add('compact');
         } else {
             header.classList.remove('compact');
@@ -401,7 +435,7 @@ function initializeHeaderScroll() {
 }
 
 function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link, .nav-moderna a, .nav-links a');
+    const navLinks = document.querySelectorAll('.nav-links-top a, .nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -435,6 +469,7 @@ function initializeModals() {
 
     function addKeyboardSupport(elements, callback) {
         elements.forEach(el => {
+            if (!el) return;
             el.addEventListener('click', callback);
             el.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -444,6 +479,15 @@ function initializeModals() {
             });
         });
     }
+
+    // Modal de Acessibilidade (Novo)
+    addKeyboardSupport([document.getElementById('btn-info-acessibilidade')], function() {
+        modalTitle.textContent = acessibilidadeData.title;
+        modalBody.innerHTML = btnVoltarGlobal + acessibilidadeData.content;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        document.querySelector('.btn-close-modal').focus();
+    });
 
     // 1. Missão, Visão e Valores 
     addKeyboardSupport(document.querySelectorAll('.mvv-trigger'), function() {
@@ -587,7 +631,7 @@ function initializeModals() {
     // Aba Processos Finalísticos
     function openIndicadoresFinalisticosMainModal() {
         modalContent.classList.add('cv-modal-wide'); 
-        modalTitle.textContent = "Indicadores das Atividades Primárias";
+        modalTitle.textContent = "INDICADORES PROCESSOS FINALÍSTICOS";
         modalBody.innerHTML = btnVoltarGlobal + indicadoresFinalisticosMainContent;
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
@@ -982,7 +1026,7 @@ function initializeAccessibility() {
         if (e.altKey) {
             switch(e.key) {
                 case '1': e.preventDefault(); document.getElementById('conteudo-principal').focus(); break;
-                case '2': e.preventDefault(); document.getElementById('menu-principal').focus(); break;
+                case '2': e.preventDefault(); document.getElementById('main-header').focus(); break;
                 case '3': e.preventDefault(); document.getElementById('searchInput').focus(); break;
                 case '4': e.preventDefault(); document.getElementById('rodape').focus(); break;
                 case '6': e.preventDefault(); toggleContrast(); break;
