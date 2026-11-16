@@ -480,15 +480,6 @@ function initializeModals() {
         });
     }
 
-    // Modal de Acessibilidade (Novo)
-    addKeyboardSupport([document.getElementById('btn-info-acessibilidade')], function() {
-        modalTitle.textContent = acessibilidadeData.title;
-        modalBody.innerHTML = btnVoltarGlobal + acessibilidadeData.content;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        document.querySelector('.btn-close-modal').focus();
-    });
-
     // 1. Missão, Visão e Valores 
     addKeyboardSupport(document.querySelectorAll('.mvv-trigger'), function() {
         const key = this.getAttribute('data-mvv');
