@@ -310,6 +310,7 @@ main {
     border: none;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     text-decoration: none;
@@ -447,12 +448,6 @@ div[class*="top-link-"] a:hover,
 }
 
 @media (max-width: 768px) {
-    .acesso-informacao__item,
-    .acesso-informacao__item_description,
-    .politica-privacidade__item_description,
-    .text-resize__label {
-        font-size: 0.755em !important;
-    }
     .region-header > *:not(:first-child) {
         margin-left: 14px;
     }
@@ -470,19 +465,6 @@ div[class*="top-link-"] a:hover,
         line-height: 1.15 !important;
         display: table-caption;
     }
-    .changer.text-resize__icon.text-decoration-none.px-1 span {
-        margin-left: 6px;
-        font-size: 0.85rem;
-    }
-    #contrast-btn,
-    #btn-contrast {
-        font-size: 0.9rem;
-    }
-    .region-header {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 4px;
-    }
     .region-header > *:not(:first-child) {
         margin-left: auto;
     }
@@ -490,14 +472,6 @@ div[class*="top-link-"] a:hover,
     .politica-privacidade__item_description,
     #block-bagov-base-bagovpoliticadeprivacidade {
         display: none !important;
-    }
-    .block-social-network ul li a,
-    .block-social-network .icon-social-network {
-        width: 24px;
-        height: 24px;
-    }
-    .block-social-network .icon-social-network::before {
-        font-size: 14px;
     }
 }
 
