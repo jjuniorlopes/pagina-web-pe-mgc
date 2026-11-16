@@ -504,21 +504,41 @@ function initializeModals() {
     // ----------------------------------------------------
     // LÓGICA: MAPA ESTRATÉGICO (Antigo Pilares)
     // ----------------------------------------------------
-    function openPilaresMainModal() {
+    let lastObjetivoClicked = null;
+    let pilaresScrollTop = 0;
+
+    function openPilaresMainModal(returnToKey) {
         modalContent.classList.add('cv-modal-wide'); 
         modalTitle.textContent = "Perspectivas";
         modalBody.innerHTML = btnVoltarGlobal + pilaresMainContent;
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+
+        if (returnToKey) {
+            const targetBtn = modalBody.querySelector(`.objetivo-btn[data-objetivo="${returnToKey}"]`);
+            if (targetBtn) {
+                modalContent.scrollTop = pilaresScrollTop;
+                targetBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                targetBtn.focus({ preventScroll: true });
+                return;
+            }
+        }
+
+        modalContent.scrollTop = 0;
         document.querySelector('.btn-close-modal').focus();
     }
 
     addKeyboardSupport(document.querySelectorAll('.pilares-trigger'), function() {
+        lastObjetivoClicked = null;
+        pilaresScrollTop = 0;
         openPilaresMainModal();
     });
 
     function openObjetivoDetails(key, titleColor) {
         if (objetivosData[key]) {
+            lastObjetivoClicked = key;
+            pilaresScrollTop = modalContent.scrollTop;
+
             const obj = objetivosData[key];
             const backBtnHtml = `
                 <button id="btn-voltar-pilares" class="btn-voltar-moderno" aria-label="Voltar para Perspectivas">
@@ -539,6 +559,7 @@ function initializeModals() {
             }
 
             modalBody.innerHTML = backBtnHtml + `<p style="font-size: 1.1rem; text-align: left;">${obj.description}</p>`;
+            modalContent.scrollTop = 0;
             document.getElementById('btn-voltar-pilares').focus();
         }
     }
@@ -700,7 +721,7 @@ function initializeModals() {
     // Aba Processos Estratégicos
     function openIndicadoresEstrategicosMainModal() {
         modalContent.classList.add('cv-modal-wide'); 
-        modalTitle.textContent = "Indicadores Estratégicos";
+        modalTitle.textContent = "OBJETIVOS ESTRATÉGICOS";
         modalBody.innerHTML = btnVoltarGlobal + indicadoresEstrategicosMainContent;
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
@@ -711,11 +732,11 @@ function initializeModals() {
         if (indicadoresEstrategicosData[key]) {
             const ind = indicadoresEstrategicosData[key];
             const backBtnHtml = `
-                <button id="btn-voltar-ind-est" class="btn-voltar-moderno" aria-label="Voltar para Indicadores Estratégicos">
+                <button id="btn-voltar-ind-est" class="btn-voltar-moderno" aria-label="Voltar para Objetivos Estratégicos">
                     <span class="icon-circle-voltar" aria-hidden="true">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
                     </span>
-                    <span class="texto-voltar">Voltar para Indicadores Estratégicos</span>
+                    <span class="texto-voltar">Voltar para Objetivos Estratégicos</span>
                 </button>
             `;
 
@@ -779,7 +800,7 @@ function initializeModals() {
         if (e.target.closest('#btn-voltar-pilares')) {
             modalTitle.style.removeProperty('color');
             modalTitle.style.removeProperty('border-bottom-color');
-            openPilaresMainModal();
+            openPilaresMainModal(lastObjetivoClicked);
             return;
         }
 
@@ -980,6 +1001,7 @@ function initializeSearch() {
 // LÓGICA DE ACESSIBILIDADE (Fonte, Contraste e Atalhos)
 // ==========================================
 function initializeAccessibility() {
+    if (window.Consis360Acessibilidade) return;
     let currentFontSize = 100;
     const htmlElement = document.documentElement;
 
