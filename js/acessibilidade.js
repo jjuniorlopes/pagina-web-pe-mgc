@@ -919,14 +919,15 @@
         '<div id="painel-acessibilidade-atalhos" class="painel-acessibilidade__atalhos-box" hidden>' +
           '<h3 class="painel-acessibilidade__atalhos-titulo">Teclas de Atalho (Padrão e-MAG)</h3>' +
           '<ul class="painel-acessibilidade__atalhos-lista">' +
-            '<li><span>Conteúdo principal</span><kbd>Alt + 1</kbd></li>' +
-            '<li><span>Menu principal</span><kbd>Alt + 2</kbd></li>' +
-            '<li><span>Rodapé da página</span><kbd>Alt + 3</kbd></li>' +
-            '<li><span>Página de Acessibilidade</span><kbd>Alt + 4</kbd></li>' +
-            '<li><span>Alternar Alto Contraste</span><kbd>Alt + 5</kbd></li>' +
-            '<li><span>Abrir VLibras</span><kbd>Alt + 6</kbd></li>' +
-            '<li><span>Ler / Parar Conteúdo</span><kbd>Alt + 7</kbd></li>' +
-            '<li><span>Abrir Menu de Acessibilidade</span><kbd>Alt + 0</kbd></li>' +
+            '<li><span>Conteúdo Inicial da Página</span><kbd>Alt + 1</kbd></li>' +
+            '<li><span>Menu Principal</span><kbd>Alt + 2</kbd></li>' +
+            '<li><span>Caixa de Pesquisa</span><kbd>Alt + 3</kbd></li>' +
+            '<li><span>Rodapé</span><kbd>Alt + 4</kbd></li>' +
+            '<li><span>Acessibilidade</span><kbd>Alt + 5</kbd></li>' +
+            '<li><span>Alto Contraste</span><kbd>Alt + 6</kbd></li>' +
+            '<li><span>VLibras</span><kbd>Alt + 7</kbd></li>' +
+            '<li><span>Mapa do Site</span><kbd>Alt + 8</kbd></li>' +
+            '<li><span>Menu de Acessibilidade</span><kbd>Alt + 0</kbd></li>' +
           '</ul>' +
         '</div>' +
       '</div>' +
@@ -1235,6 +1236,15 @@
     var digito = extrairNumeroAtalho(evento);
     if (!digito) return;
 
+    function focarPesquisa() {
+      var campoBusca = document.getElementById("searchInput");
+      if (campoBusca) {
+        campoBusca.focus({ preventScroll: false });
+        campoBusca.scrollIntoView({ behavior: "smooth", block: "center" });
+        anunciar("Foco movido para a caixa de pesquisa.");
+      }
+    }
+
     switch (digito) {
       case "1":
         evento.preventDefault();
@@ -1246,36 +1256,70 @@
         break;
       case "3":
         evento.preventDefault();
-        focarLandmark("rodape-principal");
+        focarPesquisa();
         break;
       case "4":
         evento.preventDefault();
-        var btnInfoAcess = document.getElementById("btn-info-acessibilidade");
-        if (btnInfoAcess) {
-          btnInfoAcess.click();
-        }
+        focarLandmark("rodape-principal");
         break;
       case "5":
         evento.preventDefault();
-        alternarAltoContraste();
+        window.open("https://www.ba.gov.br/acessibilidade", "_blank", "noopener,noreferrer");
+        anunciar("Abrindo página de Acessibilidade em nova aba.");
         break;
       case "6":
         evento.preventDefault();
-        acionarVlibras();
+        alternarAltoContraste();
         break;
       case "7":
         evento.preventDefault();
-        if (lendoPagina) {
-          pararLeituraPagina(false);
-        } else {
-          iniciarLeituraPagina();
-        }
+        acionarVlibras();
+        break;
+      case "8":
+        evento.preventDefault();
+        abrirMapaDoSite();
         break;
       case "0":
         evento.preventDefault();
         alternarPainel();
         break;
     }
+  }
+
+  function abrirMapaDoSite() {
+    var modal = document.getElementById("generic-modal");
+    var modalTitle = document.getElementById("modal-title");
+    var modalBody = document.getElementById("modal-body");
+    if (!modal || !modalTitle || !modalBody) return;
+
+    modalTitle.textContent = "Mapa do Site";
+    modalBody.innerHTML =
+      '<nav aria-label="Mapa do Site">' +
+        '<ul style="list-style: none; padding: 0; display: grid; gap: 10px; text-align: left;">' +
+          '<li><a href="#alinhamento" data-mapa-link>1. Introdução — Planejamento Estratégico de Referência</a></li>' +
+          '<li><a href="#missao-visao" data-mapa-link>2. Identidade Organizacional (Missão, Visão 2028 e Valores)</a></li>' +
+          '<li><a href="#mapa-estrategico" data-mapa-link>3. Mapa Estratégico</a></li>' +
+          '<li><a href="#cadeia-valor" data-mapa-link>4. Cadeia de Valor</a></li>' +
+          '<li><a href="#indicadores" data-mapa-link>5. Indicadores (Processos Finalísticos e Objetivos Estratégicos)</a></li>' +
+          '<li><a href="#rodape-principal" data-mapa-link>6. Rodapé e Informações Institucionais</a></li>' +
+          '<li><a href="https://www.ba.gov.br/acessibilidade" target="_blank" rel="noopener noreferrer">7. Acessibilidade (ba.gov.br)</a></li>' +
+        '</ul>' +
+      '</nav>';
+
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    var links = modalBody.querySelectorAll("[data-mapa-link]");
+    Array.prototype.forEach.call(links, function (lnk) {
+      lnk.addEventListener("click", function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      });
+    });
+
+    var closeBtn = modal.querySelector(".close");
+    if (closeBtn) closeBtn.focus();
+    anunciar("Mapa do Site aberto.");
   }
 
   /* ---------------------------------------------------------------

@@ -9,16 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=20261116-02">
-    <link rel="stylesheet" href="css/acessibilidade.css?v=20261116-02">
+    <link rel="stylesheet" href="css/styles.css?v=20261116-05">
+    <link rel="stylesheet" href="css/acessibilidade.css?v=20261116-05">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo-principal" accesskey="1">Pular para o conteúdo principal (Alt + 1)</a>
     <div class="banner-topo top-header" role="region" aria-label="Barra de acessibilidade e redes sociais">
         <div class="top-header__content container banner-topo__conteudo">
             <div class="region region-header">
                 <div id="block-bagov-base-textresize" class="block block-text-resize block-text-resize-block top-link-acessibilidade">
                     <div class="content banner-topo__grupo" role="group" aria-label="Acessibilidade e tamanho da fonte">
-                        <a href="https://www.ba.gov.br/acessibilidade" target="_blank" rel="noopener noreferrer" id="btn-info-acessibilidade" accesskey="4" class="resize-label text-resize__label text-uppercase text-decoration-none banner-topo__link">Acessibilidade</a>
+                        <a href="https://www.ba.gov.br/acessibilidade" target="_blank" rel="noopener noreferrer" id="btn-info-acessibilidade" accesskey="5" class="resize-label text-resize__label text-uppercase text-decoration-none banner-topo__link">Acessibilidade</a>
                         <button type="button" id="btn-font-decrease" class="changer text-resize__icon text-decoration-none px-1 banner-topo__fonte-btn" data-acao="diminuir-fonte" title="Diminuir texto (A-)" aria-label="Diminuir tamanho da fonte">
                             <span class="fa-regular fa-a" aria-hidden="true"></span><sup class="letter">-</sup>
                         </button>
@@ -31,7 +32,7 @@
                     </div>
                 </div>
                 <div id="block-bagov-base-bagovbotaodeconstraste" class="block block-bagov-base-blocks block-contrast-block">
-                    <button type="button" id="btn-contrast" class="banner-topo__contraste" accesskey="5" data-acao="alto-contraste" aria-pressed="false" title="Botão de contraste" aria-label="Alternar alto contraste (Alt + 6)">
+                    <button type="button" id="btn-contrast" class="banner-topo__contraste" accesskey="6" data-acao="alto-contraste" aria-pressed="false" title="Botão de contraste (Alt + 6)" aria-label="Alternar alto contraste (Alt + 6)">
                         <i class="fa fa-adjust" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -70,11 +71,11 @@
                     <div class="header-multi-site-navbar__brand w-100 d-flex align-items-center align-items-xl-center justify-content-between">
                         <div class="region region-nav-branding">
                             <div class="header-multi-site__logo">
-                                <h1>
-                                    <a tabindex="100" class="header-multi-site__logo" href="https://www.ba.gov.br/" target="_blank" rel="noopener noreferrer">
+                                <div>
+                                    <a class="header-multi-site__logo" href="https://www.ba.gov.br/" target="_blank" rel="noopener noreferrer">
                                         <img class="mw-100 d-block" title="Clique para voltar para tela principal" src="https://www.ba.gov.br/seplan/themes/custom/bagov_base/logo.png" onerror="this.onerror=null;this.src='imagens/ba-gov-br.png';" alt="Governo do Estado da Bahia"/>
                                     </a>
-                                </h1>
+                                </div>
                             </div>
                         </div>
                         <div class="collapse navbar-collapse flex-grow-0 header-multi-site-links__navbar" id="bagovMultisiteMenu">
@@ -82,7 +83,7 @@
                                 <div id="block-bagov-base-bagovmenumultisites" class="block block-bagov-base-blocks block-menu-multisites-block">
                                     <nav id="menu-governo-bagov" class="nav-links-top" aria-label="Menu de Navegação Principal">
                                         <ul class="nav navbar-nav px-lg-0 px-2 barra-menu__lista">
-                                            <li class="nav-item text-uppercase fw-bold"><a class="nav-link nav-text barra-menu__link text-uppercase" href="#alinhamento">INTRODUÇÃO</a></li>
+                                            <li class="nav-item text-uppercase fw-bold"><a class="nav-link nav-text barra-menu__link text-uppercase" href="#alinhamento" accesskey="2">INTRODUÇÃO</a></li>
                                             <li class="nav-item text-uppercase fw-bold"><a class="nav-link nav-text barra-menu__link text-uppercase" href="#missao-visao">IDENTIDADE</a></li>
                                             <li class="nav-item text-uppercase fw-bold"><a class="nav-link nav-text barra-menu__link text-uppercase" href="#mapa-estrategico">MAPA ESTRATÉGICO</a></li>
                                             <li class="nav-item text-uppercase fw-bold"><a class="nav-link nav-text barra-menu__link text-uppercase" href="#cadeia-valor">CADEIA DE VALOR</a></li>
@@ -103,10 +104,10 @@
         <header class="main-header" id="main-header">
             
             <div class="header-row-1">
-                <img src="imagens/icon_pe.png" alt="Ícone" class="header-icon">
+                <img src="imagens/icon_pe.png" alt="" aria-hidden="true" class="header-icon">
                 <div class="header-titles">
                     <h1 class="titulo-principal-pe">PLANEJAMENTO ESTRATÉGICO DE REFERÊNCIA</h1>
-                    <h2 class="subtitulo-pe">CONSÓRCIOS PÚBLICOS MULTIFINALITÁRIOS</h2>
+                    <p class="subtitulo-pe">CONSÓRCIOS PÚBLICOS MULTIFINALITÁRIOS</p>
                 </div>
             </div>
 
@@ -134,21 +135,8 @@
         </header>
 
         <main id="conteudo-principal" tabindex="-1">
-            
-            <div class="search-container-standalone">
-                <div class="search-box-large">
-                    <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <input type="text" id="searchInput" placeholder="Digite aqui o que procura" aria-label="Campo de busca interna do site">
-                </div>
-                <button class="btn-search-submit" id="btn-executar-busca" aria-label="Executar busca na página">
-                    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                </button>
-            </div>
 
-            <section id="alinhamento" class="section section-clean">
-                <h2 class="title-alinhamento">Planejamento Estratégico de Referência</h2>
-                <hr class="divider-orange">
-                
+            <section id="alinhamento" class="section section-clean" aria-label="Introdução — Planejamento Estratégico de Referência">
                 <div class="align-grid">
                     <div class="text-content-clean">
                         <p class="lead-text">O <strong>Planejamento Estratégico</strong> funciona como a bússola para reposicionar os consórcios públicos mutifinalitários em suas áreas de atuação e guiá-los na busca pelo desenvolvimento da governança e da sustentabilidade socioambiental e econômico-financeira.</p>
@@ -213,8 +201,8 @@
                 
                 <div style="text-align: center; margin-top: 20px;">
                     <a href="pdf/mapa_estrategico.pdf" download="Mapa_Estrategico.pdf" class="btn-voltar-moderno" style="display: inline-flex; width: auto; background: var(--primary-color); color: white; padding: 10px 25px; border-radius: 30px;">
-                        <span class="icon-circle-voltar" style="background: white; color: var(--primary-color);">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span class="icon-circle-voltar" style="background: white; color: var(--primary-color);" aria-hidden="true">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         </span>
                         <span style="color: white; font-weight: bold; font-family: 'Montserrat', sans-serif;">Clique aqui para baixar o Mapa Estratégico</span>
                     </a>
@@ -236,8 +224,8 @@
 
                 <div style="text-align: center; margin-top: 20px;">
                     <a href="pdf/cadeia_valor.pdf" download="Cadeia_de_Valor.pdf" class="btn-voltar-moderno" style="display: inline-flex; width: auto; background: var(--primary-color); color: white; padding: 10px 25px; border-radius: 30px;">
-                        <span class="icon-circle-voltar" style="background: white; color: var(--primary-color);">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+                        <span class="icon-circle-voltar" style="background: white; color: var(--primary-color);" aria-hidden="true">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
                         </span>
                         <span style="color: white; font-weight: bold; font-family: 'Montserrat', sans-serif;">Clique aqui para baixar a Cadeia de Valor</span>
                     </a>
@@ -296,9 +284,9 @@
         </div>
     </footer>
 
-    <div id="generic-modal" class="modal glass-modal-overlay" aria-modal="true" role="dialog">
+    <div id="generic-modal" class="modal glass-modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-title">
         <div class="modal-content glass-effect-strong">
-            <button class="close" aria-label="Fechar janela" title="Fechar">&times;</button>
+            <button type="button" class="close" aria-label="Fechar janela" title="Fechar">&times;</button>
             <h3 id="modal-title" class="modal-title-custom"></h3>
             <div id="modal-body" class="modal-body-custom"></div>
         </div>
@@ -315,7 +303,7 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
     
-    <script src="js/acessibilidade.js?v=20261116-02"></script>
-    <script src="js/script.js?v=20261116-03"></script>
+    <script src="js/acessibilidade.js?v=20261116-05"></script>
+    <script src="js/script.js?v=20261116-05"></script>
 </body>
 </html>

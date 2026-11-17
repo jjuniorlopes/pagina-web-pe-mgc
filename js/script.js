@@ -199,20 +199,20 @@ const cadeiaValorData = {
         content: `
             <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos de suporte correspondem ao conjunto de atividades que dão sustentação ao funcionamento do consórcio e viabilizam a execução de seus processos finalísticos. Embora não constituam, em si, as entregas principais aos consorciados e à população, são indispensáveis para assegurar organização, regularidade, eficiência e continuidade à atuação institucional.</p>
             <div class="cv-modern-grid">
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="planejamento"><div class="cv-modern-icon">${svgIcons.chart}</div><div class="cv-modern-title">Planejamento e Gestão Orçamentária</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="capacitacao"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Capacitação Técnica e Gerencial</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="auditoria"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Auditoria e Controle Interno</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="captacao"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Captação de Recursos</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="juridico"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Suporte Jurídico</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="pessoal"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Administração de Pessoal</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="contabil"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Gestão Contábil-Financeira</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="eletromecanica"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Manutenção Eletromecânica</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="ti"><div class="cv-modern-icon">${svgIcons.computer}</div><div class="cv-modern-title">Gestão de Tecnologia da Informação(TI)</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="contratos"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Gestão de Contratos e Convênios</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="aquisicao"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Aquisição de Bens e Serviços</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="patrimonial"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Gestão Patrimonial</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="frota"><div class="cv-modern-icon">${svgIcons.road}</div><div class="cv-modern-title">Gestão da Frota de Veículos</div></div>
-                <div class="cv-modern-card suporte-card-trigger" tabindex="0" data-suporte="comunicacao"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Comunicação Social</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="planejamento"><div class="cv-modern-icon">${svgIcons.chart}</div><div class="cv-modern-title">Planejamento e Gestão Orçamentária</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="capacitacao"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Capacitação Técnica e Gerencial</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="auditoria"><div class="cv-modern-icon">${svgIcons.shield}</div><div class="cv-modern-title">Auditoria e Controle Interno</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="captacao"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Captação de Recursos</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="juridico"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Suporte Jurídico</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="pessoal"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Administração de Pessoal</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="contabil"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Gestão Contábil-Financeira</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="eletromecanica"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Manutenção Eletromecânica</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="ti"><div class="cv-modern-icon">${svgIcons.computer}</div><div class="cv-modern-title">Gestão de Tecnologia da Informação(TI)</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="contratos"><div class="cv-modern-icon">${svgIcons.book}</div><div class="cv-modern-title">Gestão de Contratos e Convênios</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="aquisicao"><div class="cv-modern-icon">${svgIcons.money}</div><div class="cv-modern-title">Aquisição de Bens e Serviços</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="patrimonial"><div class="cv-modern-icon">${svgIcons.build}</div><div class="cv-modern-title">Gestão Patrimonial</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="frota"><div class="cv-modern-icon">${svgIcons.road}</div><div class="cv-modern-title">Gestão da Frota de Veículos</div></div>
+                <div class="cv-modern-card suporte-card-trigger" tabindex="0" role="button" data-suporte="comunicacao"><div class="cv-modern-icon">${svgIcons.people}</div><div class="cv-modern-title">Comunicação Social</div></div>
             </div>`
     },
     primarias: {
@@ -220,19 +220,19 @@ const cadeiaValorData = {
         content: `
 		<p style="font-size: 1.1rem; text-align: justify; margin-bottom: 25px;">Os processos finalísticos correspondem ao conjunto de atividades por meio das quais o consórcio realiza suas entregas principais para os municípios consorciados e para a população. São os processos diretamente ligados à execução de políticas, obras, serviços e ações que materializam a finalidade pública do consórcio e expressam, de forma mais concreta, sua contribuição para o desenvolvimento do território.</p>
             <div class="cv-modern-grid">
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="requalificacao"><div class="cv-modern-icon">${svgIcons.icon_road}</div><div class="cv-modern-title">Requalificação de Vias</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="manutencao"><div class="cv-modern-icon">${svgIcons.icon_maintenance}</div><div class="cv-modern-title">Manutenção de Vias</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="cadeias"><div class="cv-modern-icon">${svgIcons.icon_rural}</div><div class="cv-modern-title">Fortalecimento de Cadeias Produtivas Rurais</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="hidrica"><div class="cv-modern-icon">${svgIcons.icon_water}</div><div class="cv-modern-title">Ampliação da Oferta Hídrica</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="qualificacao"><div class="cv-modern-icon">${svgIcons.icon_animal_veg}</div><div class="cv-modern-title">Qualificação de Produtos Animal/Vegetal</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="fundiaria"><div class="cv-modern-icon">${svgIcons.icon_land}</div><div class="cv-modern-title">Suporte à Regularização Fundiária</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="ambiental"><div class="cv-modern-icon">${svgIcons.icon_environment}</div><div class="cv-modern-title">Suporte à Gestão Ambiental Municipal</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="infraestrutura"><div class="cv-modern-icon">${svgIcons.icon_infra}</div><div class="cv-modern-title">Obras de Infraestrutura Urbana e Edificações</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="social"><div class="cv-modern-icon">${svgIcons.icon_social}</div><div class="cv-modern-title">Políticas de Educação, Cultura, Esporte e Turismo</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="maquinas"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Disponibilização de Máquinas e Equipamentos</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="habitacao"><div class="cv-modern-icon">${svgIcons.icon_housing}</div><div class="cv-modern-title">Execução de Obras de Habitação</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="residuos"><div class="cv-modern-icon">${svgIcons.icon_trash}</div><div class="cv-modern-title">Gestão de Resíduos Sólidos</div></div>
-                <div class="cv-modern-card inner-card-trigger" tabindex="0" data-iniciativa="planos"><div class="cv-modern-icon">${svgIcons.icon_plan}</div><div class="cv-modern-title">Elaboração de Planos e Projetos</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="requalificacao"><div class="cv-modern-icon">${svgIcons.icon_road}</div><div class="cv-modern-title">Requalificação de Vias</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="manutencao"><div class="cv-modern-icon">${svgIcons.icon_maintenance}</div><div class="cv-modern-title">Manutenção de Vias</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="cadeias"><div class="cv-modern-icon">${svgIcons.icon_rural}</div><div class="cv-modern-title">Fortalecimento de Cadeias Produtivas Rurais</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="hidrica"><div class="cv-modern-icon">${svgIcons.icon_water}</div><div class="cv-modern-title">Ampliação da Oferta Hídrica</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="qualificacao"><div class="cv-modern-icon">${svgIcons.icon_animal_veg}</div><div class="cv-modern-title">Qualificação de Produtos Animal/Vegetal</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="fundiaria"><div class="cv-modern-icon">${svgIcons.icon_land}</div><div class="cv-modern-title">Suporte à Regularização Fundiária</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="ambiental"><div class="cv-modern-icon">${svgIcons.icon_environment}</div><div class="cv-modern-title">Suporte à Gestão Ambiental Municipal</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="infraestrutura"><div class="cv-modern-icon">${svgIcons.icon_infra}</div><div class="cv-modern-title">Obras de Infraestrutura Urbana e Edificações</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="social"><div class="cv-modern-icon">${svgIcons.icon_social}</div><div class="cv-modern-title">Políticas de Educação, Cultura, Esporte e Turismo</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="maquinas"><div class="cv-modern-icon">${svgIcons.icon_cog}</div><div class="cv-modern-title">Disponibilização de Máquinas e Equipamentos</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="habitacao"><div class="cv-modern-icon">${svgIcons.icon_housing}</div><div class="cv-modern-title">Execução de Obras de Habitação</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="residuos"><div class="cv-modern-icon">${svgIcons.icon_trash}</div><div class="cv-modern-title">Gestão de Resíduos Sólidos</div></div>
+                <div class="cv-modern-card inner-card-trigger" tabindex="0" role="button" data-iniciativa="planos"><div class="cv-modern-icon">${svgIcons.icon_plan}</div><div class="cv-modern-title">Elaboração de Planos e Projetos</div></div>
             </div>`
     },
     interessados: {
@@ -440,11 +440,52 @@ function initializeNavigation() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (targetId === '#alinhamento') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
             }
+
+            const targetSection = document.querySelector(targetId);
+            if (!targetSection) return;
+
+            const targetTitle = targetSection.querySelector('h2') || targetSection;
+            const header = document.getElementById('main-header');
+            const apoioWrapper = header ? header.querySelector('.header-apoio-wrapper') : null;
+            const wasCompact = header ? header.classList.contains('compact') : false;
+
+            let compactHeaderHeight = 0;
+            let titlePageY = 0;
+
+            if (header) {
+                const prevHeaderTransition = header.style.transition;
+                const prevApoioTransition = apoioWrapper ? apoioWrapper.style.transition : '';
+
+                if (!wasCompact) {
+                    header.style.transition = 'none';
+                    if (apoioWrapper) apoioWrapper.style.transition = 'none';
+                    header.classList.add('compact');
+                    void header.offsetHeight;
+                }
+
+                compactHeaderHeight = header.offsetHeight;
+                titlePageY = targetTitle.getBoundingClientRect().top + window.pageYOffset;
+
+                if (!wasCompact) {
+                    header.classList.remove('compact');
+                    void header.offsetHeight;
+                    header.style.transition = prevHeaderTransition;
+                    if (apoioWrapper) apoioWrapper.style.transition = prevApoioTransition;
+                }
+            } else {
+                titlePageY = targetTitle.getBoundingClientRect().top + window.pageYOffset;
+            }
+
+            const finalTop = Math.max(0, titlePageY - compactHeaderHeight - 16);
+            window.scrollTo({
+                top: finalTop,
+                behavior: 'smooth'
+            });
         });
     });
 }
@@ -467,13 +508,19 @@ function initializeModals() {
         </button>
     `;
 
+    let lastModalOpener = null;
+
     function addKeyboardSupport(elements, callback) {
         elements.forEach(el => {
             if (!el) return;
-            el.addEventListener('click', callback);
-            el.addEventListener('keypress', function(e) {
+            el.addEventListener('click', function(e) {
+                lastModalOpener = this;
+                callback.call(this, e);
+            });
+            el.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
+                    lastModalOpener = this;
                     callback.call(this, e);
                 }
             });
@@ -765,9 +812,23 @@ function initializeModals() {
         modalTitle.style.removeProperty('color');
         modalTitle.style.removeProperty('border-bottom-color');
         document.body.style.overflow = '';
+        if (lastModalOpener && typeof lastModalOpener.focus === 'function') {
+            lastModalOpener.focus();
+            lastModalOpener = null;
+        }
     }
 
     closeBtn.addEventListener('click', closeModal);
+
+    modalBody.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            const trigger = e.target.closest('.cv-card-trigger, .inner-card-trigger, .suporte-card-trigger, .ind-card-trigger, .ind-est-card-trigger');
+            if (trigger) {
+                e.preventDefault();
+                trigger.click();
+            }
+        }
+    });
     
     modalBody.addEventListener('click', function(e) {
         
@@ -873,7 +934,28 @@ function initializeModals() {
     });
 
     window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display !== 'flex') return;
+        if (e.key === 'Escape') {
+            closeModal();
+            return;
+        }
+        if (e.key === 'Tab') {
+            const focusables = Array.from(modal.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+                .filter(el => el.offsetParent !== null);
+            if (focusables.length > 0) {
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        }
+    });
 }
 
 // ==========================================
@@ -921,8 +1003,19 @@ function initializeSearch() {
             parent.normalize();
         });
 
+        const searchStatus = document.getElementById('search-status');
+        function notifySearch(msg) {
+            if (searchStatus) {
+                searchStatus.textContent = '';
+                setTimeout(() => { searchStatus.textContent = msg; }, 30);
+            }
+            if (window.Consis360Acessibilidade && window.Consis360Acessibilidade.anunciar) {
+                window.Consis360Acessibilidade.anunciar(msg);
+            }
+        }
+
         if (term.length < 3) {
-            if(term.length > 0) alert('Digite pelo menos 3 caracteres para pesquisar.');
+            if (term.length > 0) notifySearch('Digite pelo menos 3 caracteres para pesquisar.');
             return;
         }
 
@@ -970,8 +1063,9 @@ function initializeSearch() {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+            notifySearch('Resultado encontrado na página para: ' + term);
         } else {
-            alert('Nenhum resultado encontrado para "' + term + '" na página principal.');
+            notifySearch('Nenhum resultado encontrado para "' + term + '" na página principal.');
         }
     }
 
