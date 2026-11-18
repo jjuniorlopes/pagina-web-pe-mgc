@@ -504,6 +504,17 @@ div[class*="top-link-"] a:hover,
 }
 
 @media (max-width: 640px) {
+    .top-header__content {
+        min-height: 44px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .region-header {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+    }
     .acesso-informacao__item,
     .acesso-informacao__item_description,
     .politica-privacidade__item_description,
@@ -512,12 +523,17 @@ div[class*="top-link-"] a:hover,
         line-height: 1.15 !important;
         display: table-caption;
     }
+    .changer.text-resize__icon.text-decoration-none.px-1 span {
+        margin-left: 8px;
+        font-size: 0.95rem;
+    }
     .region-header > *:not(:first-child) {
         margin-left: auto;
     }
     .acesso-informacao__item_image,
     .politica-privacidade__item_description,
-    #block-bagov-base-bagovpoliticadeprivacidade {
+    #block-bagov-base-bagovpoliticadeprivacidade,
+    #block-bagov-base-bagovredessociais {
         display: none !important;
     }
 }
@@ -1519,8 +1535,8 @@ body.alto-contraste .rodape__divisor {
 
     /* Responsividade Main Header */
     .main-header {
-        padding: 12px 10px 8px 10px;
-        margin-bottom: 8px;
+        padding: 14px 10px 10px 10px;
+        margin-bottom: 10px;
     }
     .main-header.compact {
         padding: 8px 10px;
@@ -1529,24 +1545,24 @@ body.alto-contraste .rodape__divisor {
         flex-direction: column;
         text-align: center;
         gap: 8px;
-        padding-bottom: 5px;
+        padding-bottom: 6px;
     }
     .header-icon {
-        height: 36px;
+        height: 40px;
     }
     .main-header.compact .header-icon {
-        height: 26px;
+        height: 28px;
     }
-    .titulo-principal-pe { font-size: 1.1rem !important; line-height: 1.25 !important; }
-    .subtitulo-pe { font-size: 0.8rem !important; line-height: 1.25 !important; }
+    .titulo-principal-pe { font-size: 1.18rem !important; line-height: 1.28 !important; }
+    .subtitulo-pe { font-size: 0.85rem !important; line-height: 1.28 !important; }
     
-    .main-header.compact .titulo-principal-pe { font-size: 0.92rem !important; }
-    .main-header.compact .subtitulo-pe { font-size: 0.68rem !important; }
+    .main-header.compact .titulo-principal-pe { font-size: 0.95rem !important; }
+    .main-header.compact .subtitulo-pe { font-size: 0.72rem !important; }
     
-    .apoio-logos-row { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px 12px; }
-    .logo-gov, .logo-fec { height: 32px; }
-    .logo-text { font-size: 0.72rem; text-align: center; }
-    .logo-pipe { font-size: 1.1rem; }
+    .apoio-logos-row { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
+    .logo-gov, .logo-fec { height: 38px; }
+    .logo-text { font-size: 0.78rem; text-align: center; }
+    .logo-pipe { display: none; }
 
     /* Padronização Impecável dos Cards no Celular (1 Coluna Limpa) */
     .cv-modern-grid, 
@@ -1556,7 +1572,7 @@ body.alto-contraste .rodape__divisor {
     .mvv-modern-grid { 
         display: grid !important;
         grid-template-columns: 1fr !important;
-        gap: 15px !important; 
+        gap: 16px !important; 
         width: 100% !important;
     }
 
@@ -1569,7 +1585,7 @@ body.alto-contraste .rodape__divisor {
         margin: 0 auto !important;
         height: auto !important;
         min-height: auto !important; 
-        padding: 22px 16px !important; 
+        padding: 24px 18px !important; 
         justify-content: center !important;
     }
 
@@ -1584,23 +1600,23 @@ body.alto-contraste .rodape__divisor {
 
     .cv-modern-icon, 
     .mvv-icon { 
-        width: 42px !important; 
-        height: 42px !important; 
-        margin-bottom: 12px !important; 
+        width: 50px !important; 
+        height: 50px !important; 
+        margin-bottom: 14px !important; 
         flex-shrink: 0; 
     }
 
     .cv-modern-title, 
     .mvv-text { 
-        font-size: 0.95rem !important; 
-        line-height: 1.4 !important; 
+        font-size: 1.02rem !important; 
+        line-height: 1.45 !important; 
         word-wrap: break-word; 
     }
     
-    .mvv-footer { padding: 12px !important; font-size: 0.95rem !important; }
+    .mvv-footer { padding: 14px !important; font-size: 1rem !important; }
 
     .objetivo-btn { 
-        font-size: 0.85rem; 
+        font-size: 0.9rem; 
         padding: 14px; 
         white-space: normal; 
         height: auto;
@@ -1612,38 +1628,38 @@ body.alto-contraste .rodape__divisor {
         gap: 20px !important; 
     } 
     .text-content-clean p { 
-        font-size: 0.95rem !important; 
-        line-height: 1.6 !important;
-        margin-bottom: 12px !important;
+        font-size: 1rem !important; 
+        line-height: 1.65 !important;
+        margin-bottom: 14px !important;
     }
     .text-content-clean .lead-text { 
-        font-size: 1rem !important; 
+        font-size: 1.05rem !important; 
     }
     .highlight-quote p {
-        font-size: 0.92rem !important;
+        font-size: 0.96rem !important;
         padding: 12px !important;
     }
     .solid-blue-box { 
-        padding: 20px 18px !important; 
+        padding: 22px 18px !important; 
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     .solid-blue-box h3 { 
-        font-size: 1.25rem !important; 
+        font-size: 1.3rem !important; 
         margin-bottom: 14px !important; 
     }
     .check-list li { 
-        font-size: 0.9rem !important; 
-        margin-bottom: 10px !important; 
-        line-height: 1.4 !important;
+        font-size: 0.95rem !important; 
+        margin-bottom: 12px !important; 
+        line-height: 1.45 !important;
     }
 
     /* Botões de download e voltar no mobile */
     a.btn-voltar-moderno {
         max-width: 100%;
-        padding: 10px 16px !important;
-        font-size: 0.85rem;
+        padding: 12px 18px !important;
+        font-size: 0.92rem;
         white-space: normal;
         text-align: left;
     }
@@ -1651,14 +1667,20 @@ body.alto-contraste .rodape__divisor {
     /* Modais Mobile Aprimorados */
     .modal-content { width: 95%; max-height: 85vh; padding: 20px 15px 30px; border-radius: 12px; }
     .close { right: 15px; top: 15px; }
-    .modal-table th, .modal-table td { font-size: 0.88rem; padding: 10px; }
-    .texto-voltar { font-size: 0.95rem; }
+    .modal-table th, .modal-table td { font-size: 0.92rem; padding: 10px; }
+    .texto-voltar { font-size: 1rem; }
     
-    .section { padding: 24px 8px; }
-    .section-clean { padding: 12px 8px 24px 8px; }
-    h2:not(.rodape__coluna-titulo), .title-alinhamento { font-size: 1.35rem !important; }
-    .modal-title-custom { font-size: 1.2rem !important; padding-right: 30px !important; }
-    p { font-size: 0.98rem; }
+    .section { padding: 26px 10px; }
+    .section-clean { padding: 14px 10px 26px 10px; }
+    h2:not(.rodape__coluna-titulo), .title-alinhamento { font-size: 1.5rem !important; }
+    .modal-title-custom { font-size: 1.3rem !important; padding-right: 30px !important; }
+    p { font-size: 1rem; }
     
     img[alt="Cadeia de Valor"], img[alt="Mapa Estratégico"] { width: 100% !important; height: auto !important; }
+
+    /* Rodapé Mobile */
+    .rodape__logo-governo { width: 200px; }
+    .rodape__coluna-titulo { font-size: 1.05rem; }
+    .rodape p.rodape__orgao, .rodape p.rodape__texto, .rodape__guia-lista a { font-size: 0.92rem; }
+    .rodape__direitos { font-size: 0.78rem; padding-inline: 10px; }
 }
